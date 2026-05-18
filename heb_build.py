@@ -419,7 +419,8 @@ function renderProds(){{
   if(q)list=list.filter(p=>(p.n+' '+p.b).toLowerCase().includes(q));
   document.getElementById('prod-count').textContent=list.length+' products';
   if(!list.length){{document.getElementById('prod-list').innerHTML='<div class="no-results">No products found — use the field above to add manually</div>';return;}}
-  document.getElementById('prod-list').innerHTML=list.map(p=>{{
+  window._prodList=list;
+  document.getElementById('prod-list').innerHTML=list.map((p,i)=>{{
     const added=addedNames.includes(p.n);
     const imgEl=p.img?`<img class="prod-img" src="${{p.img}}" loading="lazy" onerror="this.style.display='none'">`:`<div class="prod-ph">🛒</div>`;
     return `<div class="prod${{added?' added':''}}">
@@ -429,21 +430,17 @@ function renderProds(){{
         <div class="prod-name">${{p.n}}</div>
         <div class="prod-price">${{p.p}}${{p.uom?' / '+p.uom:''}}</div>
       </div>
-      <button class="add-btn" onclick="addProd(this)"
-        data-n="${{p.n.replace(/"/g,'&quot;')}}"
-        data-b="${{(p.b||'').replace(/"/g,'&quot;')}}"
-        data-p="${{p.p}}"
-        data-url="${{p.url}}"
-      >${{added?'✓ Added':'+ Add'}}</button>
+      <button class="add-btn" onclick="addProd(${{i}})">${{added?'✓ Added':'+ Add'}}</button>
     </div>`;
   }}).join('');
 }}
-function addProd(btn){{
-  if(!who){{alert('Go back and tap your name first!');return;}}
-  const name=btn.dataset.n,brand=btn.dataset.b,price=btn.dataset.p,url=btn.dataset.url;
+function addProd(idx){{
+  if(!who){{alert('Please go back and tap your name first!');return;}}
+  const p=window._prodList[idx];
+  if(!p)return;
   if(!picks[who.id])picks[who.id]=[];
-  if(!picks[who.id].find(p=>p.n===name)){{
-    picks[who.id].push({{n:name,b:brand,p:price,url:url}});
+  if(!picks[who.id].find(x=>x.n===p.n)){{
+    picks[who.id].push({{n:p.n,b:p.b||'',p:p.p||'',url:p.url}});
     save();refreshBadge();renderProds();showToast('✓ Added to list!');
   }}
 }}
