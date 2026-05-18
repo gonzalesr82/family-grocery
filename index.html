@@ -9,20 +9,13 @@
 :root{--red:#CC2529;--red-l:#fdf2f2;--red-d:#a01e21;--green:#2d9b5a;--green-l:#f0faf4;--bg:#f5f3f0;--card:#fff;--text:#1a1a1a;--muted:#6b6b6b;--faint:#b8b8b8;--border:rgba(0,0,0,.08);--r:16px;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overscroll-behavior:none;}
-.app{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;position:relative;}
-
-/* HEADER */
+.app{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;}
 .hdr{background:var(--red);color:#fff;padding:14px 16px 12px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.hdr-left{display:flex;flex-direction:column;}
 .hdr-logo{font-family:'Nunito',sans-serif;font-weight:900;font-size:18px;line-height:1;}
 .hdr-sub{font-size:10px;opacity:.75;margin-top:1px;}
 .hdr-store{font-size:10px;opacity:.85;text-align:right;line-height:1.5;}
-
-/* SCREENS */
 .scr{display:none;flex:1;flex-direction:column;overflow:hidden;}
 .scr.on{display:flex;}
-
-/* WHO */
 .who-body{padding:16px;flex:1;overflow-y:auto;}
 .pg-title{font-family:'Nunito',sans-serif;font-size:20px;font-weight:900;margin-bottom:3px;}
 .pg-sub{font-size:13px;color:var(--muted);margin-bottom:18px;}
@@ -37,80 +30,63 @@ body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text)
 .btn-red{background:var(--red);color:#fff;}
 .btn-ghost{background:transparent;border:2px solid var(--border);color:var(--muted);font-size:13px;padding:11px;}
 .btn-ghost:hover{border-color:var(--red);color:var(--red);}
-.btn-green{background:var(--green);color:#fff;}
-
-/* CATEGORIES */
 .cat-body{flex:1;overflow-y:auto;padding:14px;}
-.back{display:flex;align-items:center;gap:4px;background:none;border:none;font-size:13px;color:var(--muted);cursor:pointer;margin-bottom:12px;padding:0;font-family:'Nunito Sans',sans-serif;}
+.back{display:flex;align-items:center;gap:4px;background:none;border:none;font-size:13px;color:var(--muted);cursor:pointer;margin-bottom:12px;padding:0;}
 .back:hover{color:var(--red);}
 .cat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
 .cat-card{background:var(--card);border-radius:14px;padding:14px 8px 11px;text-align:center;cursor:pointer;border:1.5px solid transparent;transition:all .15s;}
 .cat-card:hover{border-color:rgba(204,37,41,.25);}
 .cat-card:active{transform:scale(.97);}
 .cat-em{font-size:26px;display:block;margin-bottom:5px;}
-.cat-nm{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;line-height:1.2;color:var(--text);}
-
-/* BOTTOM NAV */
+.cat-nm{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;line-height:1.2;}
+.cat-ct{font-size:9px;color:var(--faint);margin-top:2px;}
 .nav{display:flex;background:var(--card);border-top:1px solid var(--border);flex-shrink:0;}
 .nav-btn{flex:1;padding:10px 8px 13px;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;font-size:9px;font-family:'Nunito',sans-serif;font-weight:800;color:var(--faint);transition:color .15s;}
 .nav-btn.on{color:var(--red);}
 .nav-btn svg{width:21px;height:21px;}
 .bdg{background:var(--red);color:#fff;font-size:8px;border-radius:20px;padding:1px 5px;min-width:15px;text-align:center;display:none;}
 .bdg.show{display:block;}
-
-/* SLIDE-UP SHEET */
 .backdrop{position:fixed;inset:0;background:rgba(0,0,0,0);transition:background .3s;pointer-events:none;z-index:40;max-width:480px;margin:0 auto;}
 .backdrop.show{background:rgba(0,0,0,.5);pointer-events:auto;}
-.sheet{position:fixed;left:50%;transform:translateX(-50%) translateY(100%);bottom:0;width:100%;max-width:480px;background:var(--card);border-radius:22px 22px 0 0;transition:transform .35s cubic-bezier(.32,.72,0,1);z-index:50;display:flex;flex-direction:column;height:82vh;}
+.sheet{position:fixed;left:50%;transform:translateX(-50%) translateY(100%);bottom:0;width:100%;max-width:480px;background:var(--card);border-radius:22px 22px 0 0;transition:transform .35s cubic-bezier(.32,.72,0,1);z-index:50;display:flex;flex-direction:column;height:85vh;}
 .sheet.open{transform:translateX(-50%) translateY(0);}
 .sheet-handle{width:38px;height:4px;background:var(--border);border-radius:2px;margin:10px auto 0;flex-shrink:0;}
 .sheet-hdr{padding:12px 16px 10px;display:flex;align-items:center;justify-content:space-between;border-bottom:0.5px solid var(--border);flex-shrink:0;}
 .sheet-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;}
 .sheet-close{background:var(--bg);border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;}
-
-/* brand filter */
-.brand-row{padding:10px 14px 8px;border-bottom:0.5px solid var(--border);flex-shrink:0;}
+.brand-row{padding:8px 14px 6px;border-bottom:0.5px solid var(--border);flex-shrink:0;}
 .brand-scroll{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;}
 .brand-scroll::-webkit-scrollbar{display:none;}
 .bpill{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0;font-family:'Nunito',sans-serif;}
-.bpill:hover{border-color:var(--red);color:var(--red);}
 .bpill.on{background:var(--red);color:#fff;border-color:var(--red);}
-
-/* search in sheet */
 .sheet-search-row{padding:8px 14px;border-bottom:0.5px solid var(--border);flex-shrink:0;display:flex;gap:8px;}
-.sheet-search{flex:1;padding:8px 12px;border-radius:10px;border:1.5px solid var(--border);font-size:13px;background:var(--bg);outline:none;font-family:'Nunito Sans',sans-serif;}
+.sheet-search{flex:1;padding:8px 12px;border-radius:10px;border:1.5px solid var(--border);font-size:13px;background:var(--bg);outline:none;}
 .sheet-search:focus{border-color:var(--red);}
-
-/* custom add */
 .custom-row{padding:8px 14px;border-bottom:0.5px solid var(--border);flex-shrink:0;}
 .custom-inner{display:flex;gap:8px;align-items:center;background:var(--bg);border-radius:10px;padding:8px 12px;border:1.5px dashed var(--border);}
-.custom-input{flex:1;background:transparent;border:none;outline:none;font-size:13px;font-family:'Nunito Sans',sans-serif;color:var(--text);}
+.custom-input{flex:1;background:transparent;border:none;outline:none;font-size:13px;color:var(--text);}
 .custom-input::placeholder{color:var(--faint);}
 .custom-btn{background:var(--red);color:#fff;border:none;border-radius:8px;padding:6px 11px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Nunito',sans-serif;}
-
-/* product list */
 .sheet-body{flex:1;overflow-y:auto;padding:10px 14px 20px;}
-.prod-meta-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
-.prod-count{font-size:11px;color:var(--faint);}
+.prod-count{font-size:11px;color:var(--faint);margin-bottom:8px;}
 .prod-list{display:flex;flex-direction:column;gap:7px;}
 .prod{display:flex;align-items:center;gap:10px;background:var(--bg);border-radius:12px;padding:10px 11px;border:1.5px solid transparent;transition:all .15s;}
 .prod:hover{border-color:rgba(204,37,41,.25);}
 .prod.added{border-color:var(--green);background:var(--green-l);}
-.prod-em{font-size:22px;width:30px;text-align:center;flex-shrink:0;}
+.prod-img{width:48px;height:48px;border-radius:8px;object-fit:contain;flex-shrink:0;background:var(--card);}
+.prod-ph{width:48px;height:48px;border-radius:8px;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
 .prod-info{flex:1;min-width:0;}
+.prod-brand{font-size:10px;color:var(--muted);}
 .prod-name{font-size:12px;font-weight:700;color:var(--text);line-height:1.3;}
-.prod-detail{font-size:10px;color:var(--muted);margin-top:1px;}
 .prod-price{font-size:12px;font-weight:700;color:var(--red);margin-top:2px;}
 .add-btn{background:var(--red);color:#fff;border:none;border-radius:9px;padding:7px 11px;font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;transition:all .15s;font-family:'Nunito',sans-serif;}
 .add-btn:active{transform:scale(.95);}
 .prod.added .add-btn{background:var(--green);}
 .no-results{text-align:center;padding:30px 0;color:var(--faint);font-size:13px;}
-
-/* LIST SCREEN */
 .list-body{flex:1;overflow-y:auto;padding:14px;}
 .stats{display:flex;gap:8px;margin-bottom:14px;}
 .stat{flex:1;background:var(--card);border-radius:12px;padding:10px;text-align:center;}
-.stat-n{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;color:var(--text);}
+.stat-n{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;}
 .stat-l{font-size:10px;color:var(--muted);}
 .person-blk{margin-bottom:14px;}
 .person-hd{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
@@ -126,27 +102,18 @@ body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text)
 .rm-btn:hover{color:var(--red);}
 .empty-list{text-align:center;padding:50px 20px;color:var(--muted);}
 .empty-list .big{font-size:48px;margin-bottom:10px;}
-.empty-list p{font-size:14px;line-height:1.7;}
-.list-actions{display:flex;flex-direction:column;gap:8px;margin-top:16px;padding-bottom:8px;}
+.list-actions{display:flex;flex-direction:column;gap:8px;margin-top:16px;}
 .copy-ok{background:var(--green-l);color:var(--green);border-radius:10px;padding:10px;font-size:13px;font-weight:700;text-align:center;display:none;margin-top:6px;}
-
-/* TOAST */
-.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(8px);background:#1a1a1a;color:#fff;font-size:12px;font-weight:700;padding:8px 16px;border-radius:20px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:100;max-width:480px;}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(8px);background:#1a1a1a;color:#fff;font-size:12px;font-weight:700;padding:8px 16px;border-radius:20px;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:100;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 </style>
 </head>
 <body>
 <div class="app">
-
   <div class="hdr">
-    <div class="hdr-left">
-      <div class="hdr-logo">🛒 Family List</div>
-      <div class="hdr-sub">H‑E‑B Grocery</div>
-    </div>
-    <div class="hdr-store">📍 Bandera & 1604<br>San Antonio, TX</div>
+    <div><div class="hdr-logo">🛒 Family List</div><div class="hdr-sub">H‑E‑B Grocery</div></div>
+    <div class="hdr-store">📍 Bandera &amp; 1604<br>San Antonio, TX</div>
   </div>
-
-  <!-- WHO -->
   <div class="scr on" id="s-who">
     <div class="who-body">
       <div class="pg-title">Hey! Who are you? 👋</div>
@@ -160,8 +127,6 @@ body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text)
       <button class="btn btn-red" onclick="goCats()">Let's go! →</button>
     </div>
   </div>
-
-  <!-- CATEGORIES -->
   <div class="scr" id="s-cats">
     <div class="cat-body">
       <button class="back" onclick="show('s-who')">← Back</button>
@@ -170,8 +135,6 @@ body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text)
       <div class="cat-grid" id="cat-grid"></div>
     </div>
   </div>
-
-  <!-- LIST -->
   <div class="scr" id="s-list">
     <div class="list-body">
       <div class="stats">
@@ -185,25 +148,19 @@ body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text)
         <button class="btn btn-ghost" onclick="copyList()">Copy list as text</button>
         <button class="btn btn-ghost" style="color:var(--red);border-color:var(--red)" onclick="resetList()">Clear this week's list</button>
       </div>
-      <div class="copy-ok" id="copy-ok">✓ Copied to clipboard!</div>
+      <div class="copy-ok" id="copy-ok">✓ Copied!</div>
     </div>
   </div>
-
-  <!-- BOTTOM NAV -->
   <div class="nav">
     <button class="nav-btn on" id="n-add" onclick="navTo('add')">
-      <svg fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-      Add Items
+      <svg fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>Add Items
     </button>
     <button class="nav-btn" id="n-list" onclick="navTo('list')">
-      <svg fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
-      Our List
+      <svg fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>Our List
       <div class="bdg" id="bdg">0</div>
     </button>
   </div>
 </div>
-
-<!-- SHEET -->
 <div class="backdrop" id="backdrop" onclick="closeSheet()"></div>
 <div class="sheet" id="sheet">
   <div class="sheet-handle"></div>
@@ -222,905 +179,395 @@ body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text)
     </div>
   </div>
   <div class="sheet-body">
-    <div class="prod-meta-row">
-      <div class="prod-count" id="prod-count"></div>
-    </div>
+    <div class="prod-count" id="prod-count"></div>
     <div class="prod-list" id="prod-list"></div>
   </div>
 </div>
-
 <div class="toast" id="toast"></div>
-
 <script>
-const STORE='623';
-const HEB=q=>`https://www.heb.com/search?q=${encodeURIComponent(q)}&store=${STORE}`;
-
-// ── CATEGORIES ────────────────────────────────────────────────────
+const STORE=623;
 const CATS=[
-  {id:'chips',      em:'🥔', nm:'Chips & Crisps'},
-  {id:'tortilla',   em:'🌽', nm:'Tortilla Chips'},
-  {id:'popcorn',    em:'🍿', nm:'Popcorn'},
-  {id:'crackers',   em:'🫙', nm:'Crackers'},
-  {id:'pretzels',   em:'🥨', nm:'Pretzels & Puffs'},
-  {id:'candy',      em:'🍬', nm:'Candy & Sweets'},
-  {id:'cookies',    em:'🍪', nm:'Cookies'},
-  {id:'icecream',   em:'🍨', nm:'Ice Cream'},
-  {id:'frozen',     em:'🧊', nm:'Frozen Foods'},
-  {id:'pizza',      em:'🍕', nm:'Frozen Pizza'},
-  {id:'breakfast',  em:'🥣', nm:'Cereal & Breakfast'},
-  {id:'bread',      em:'🍞', nm:'Bread & Bakery'},
-  {id:'dairy',      em:'🧀', nm:'Dairy & Eggs'},
-  {id:'meat',       em:'🥩', nm:'Meat & Seafood'},
-  {id:'deli',       em:'🥪', nm:'Deli Meats'},
-  {id:'produce',    em:'🥦', nm:'Fresh Vegetables'},
-  {id:'fruit',      em:'🍎', nm:'Fresh Fruit'},
-  {id:'drinks',     em:'🥤', nm:'Sodas & Drinks'},
-  {id:'water',      em:'💧', nm:'Water & Sparkling'},
-  {id:'juice',      em:'🍊', nm:'Juice'},
-  {id:'coffee',     em:'☕', nm:'Coffee & Tea'},
-  {id:'pasta',      em:'🍝', nm:'Pasta & Sauces'},
-  {id:'canned',     em:'🥫', nm:'Canned Goods'},
-  {id:'rice',       em:'🍚', nm:'Rice, Beans & Grains'},
-  {id:'condiments', em:'🫙', nm:'Condiments & Sauces'},
-  {id:'spices',     em:'🧂', nm:'Spices & Baking'},
-  {id:'oils',       em:'🫒', nm:'Oils & Vinegar'},
-  {id:'snackbars',  em:'🍫', nm:'Snack & Granola Bars'},
-  {id:'nuts',       em:'🥜', nm:'Nuts & Trail Mix'},
-  {id:'lunchmeat',  em:'📦', nm:'Lunchables & Kids'},
-  {id:'household',  em:'🧻', nm:'Paper & Cleaning'},
-  {id:'laundry',    em:'🧺', nm:'Laundry'},
-  {id:'soap',       em:'🧴', nm:'Soap & Body Wash'},
-  {id:'haircare',   em:'💆', nm:'Hair Care'},
-  {id:'oral',       em:'🪥', nm:'Oral Care'},
-  {id:'medicine',   em:'💊', nm:'Medicine'},
-  {id:'baby',       em:'👶', nm:'Baby'},
-  {id:'petfood',    em:'🐾', nm:'Pet Food'},
+  {id:'490589',em:'🥔',nm:'Chips & Crisps',count:0},
+  {id:'490590',em:'🌽',nm:'Tortilla Chips',count:0},
+  {id:'490591',em:'🍿',nm:'Popcorn',count:0},
+  {id:'490592',em:'🫙',nm:'Crackers',count:0},
+  {id:'490593',em:'🥨',nm:'Pretzels & Puffs',count:0},
+  {id:'490600',em:'🍬',nm:'Candy & Chocolate',count:0},
+  {id:'490601',em:'🍪',nm:'Cookies',count:0},
+  {id:'490700',em:'🍨',nm:'Ice Cream',count:0},
+  {id:'490701',em:'🧊',nm:'Frozen Meals',count:0},
+  {id:'490702',em:'🍕',nm:'Frozen Pizza',count:0},
+  {id:'490703',em:'🍗',nm:'Frozen Chicken',count:0},
+  {id:'490200',em:'🥣',nm:'Cereal & Breakfast',count:0},
+  {id:'490201',em:'🧇',nm:'Waffles & Pastries',count:0},
+  {id:'490100',em:'🍞',nm:'Bread & Rolls',count:0},
+  {id:'490101',em:'🫓',nm:'Tortillas',count:0},
+  {id:'490800',em:'🥛',nm:'Milk & Cream',count:0},
+  {id:'490801',em:'🧀',nm:'Cheese',count:0},
+  {id:'490802',em:'🥚',nm:'Eggs',count:0},
+  {id:'490803',em:'🧈',nm:'Butter',count:0},
+  {id:'490804',em:'🍦',nm:'Yogurt',count:0},
+  {id:'490300',em:'🍗',nm:'Chicken',count:0},
+  {id:'490301',em:'🥩',nm:'Beef & Steak',count:0},
+  {id:'490302',em:'🥩',nm:'Pork',count:0},
+  {id:'490303',em:'🥓',nm:'Bacon & Sausage',count:0},
+  {id:'490304',em:'🌭',nm:'Hot Dogs',count:0},
+  {id:'490305',em:'🐟',nm:'Seafood',count:0},
+  {id:'490306',em:'🦃',nm:'Turkey',count:0},
+  {id:'490400',em:'🥪',nm:'Deli Meats',count:0},
+  {id:'490401',em:'🧀',nm:'Deli Cheese',count:0},
+  {id:'490500',em:'🥦',nm:'Fresh Vegetables',count:0},
+  {id:'490501',em:'🥬',nm:'Salads & Greens',count:0},
+  {id:'490502',em:'🍎',nm:'Fresh Fruit',count:0},
+  {id:'490503',em:'🍊',nm:'Citrus & Tropical',count:0},
+  {id:'490010',em:'🥤',nm:'Sodas',count:0},
+  {id:'490011',em:'💧',nm:'Water & Sparkling',count:0},
+  {id:'490012',em:'🍊',nm:'Juice',count:0},
+  {id:'490013',em:'☕',nm:'Coffee',count:0},
+  {id:'490014',em:'🍵',nm:'Tea',count:0},
+  {id:'490015',em:'⚡',nm:'Sports & Energy',count:0},
+  {id:'490020',em:'🍝',nm:'Pasta & Noodles',count:0},
+  {id:'490021',em:'🍅',nm:'Pasta Sauce',count:0},
+  {id:'490022',em:'🧀',nm:'Mac & Cheese',count:0},
+  {id:'490030',em:'🥫',nm:'Canned Soup',count:0},
+  {id:'490031',em:'🥫',nm:'Canned Vegetables',count:0},
+  {id:'490032',em:'🥫',nm:'Canned Beans',count:0},
+  {id:'490033',em:'🥫',nm:'Canned Tomatoes',count:0},
+  {id:'490034',em:'🐟',nm:'Canned Tuna',count:0},
+  {id:'490040',em:'🍚',nm:'Rice',count:0},
+  {id:'490041',em:'🫘',nm:'Dried Beans',count:0},
+  {id:'490042',em:'🌾',nm:'Grains & Oats',count:0},
+  {id:'490050',em:'🍅',nm:'Ketchup & Mustard',count:0},
+  {id:'490051',em:'🫙',nm:'Mayo & Dressings',count:0},
+  {id:'490052',em:'🌶️',nm:'Hot Sauce & Salsa',count:0},
+  {id:'490053',em:'🍖',nm:'BBQ Sauce',count:0},
+  {id:'490060',em:'🧂',nm:'Salt & Spices',count:0},
+  {id:'490061',em:'🫙',nm:'Baking',count:0},
+  {id:'490070',em:'🫒',nm:'Oils & Vinegar',count:0},
+  {id:'490080',em:'🍫',nm:'Snack & Granola Bars',count:0},
+  {id:'490081',em:'🥜',nm:'Nuts & Peanut Butter',count:0},
+  {id:'490090',em:'📦',nm:'Lunchables & Kids',count:0},
+  {id:'490091',em:'🧃',nm:'Kids Juice',count:0},
+  {id:'490092',em:'🍬',nm:'Fruit Snacks',count:0},
+  {id:'490150',em:'🧻',nm:'Toilet Paper & Tissues',count:0},
+  {id:'490151',em:'🧻',nm:'Paper Towels',count:0},
+  {id:'490152',em:'🛍️',nm:'Bags & Foil',count:0},
+  {id:'490153',em:'🗑️',nm:'Trash Bags',count:0},
+  {id:'490154',em:'🫧',nm:'Dish Soap',count:0},
+  {id:'490155',em:'🧹',nm:'Cleaners',count:0},
+  {id:'490160',em:'🧺',nm:'Laundry Detergent',count:0},
+  {id:'490161',em:'🧺',nm:'Fabric Softener',count:0},
+  {id:'490170',em:'🧼',nm:'Body Wash & Soap',count:0},
+  {id:'490171',em:'🫧',nm:'Hand Soap',count:0},
+  {id:'490172',em:'🧴',nm:'Lotion',count:0},
+  {id:'490173',em:'☀️',nm:'Sunscreen',count:0},
+  {id:'490180',em:'💆',nm:'Shampoo',count:0},
+  {id:'490181',em:'💆',nm:'Conditioner',count:0},
+  {id:'490190',em:'🪥',nm:'Toothpaste',count:0},
+  {id:'490191',em:'🫧',nm:'Mouthwash',count:0},
+  {id:'490200',em:'💊',nm:'Pain Relief',count:0},
+  {id:'490201',em:'💊',nm:'Cold & Flu',count:0},
+  {id:'490202',em:'💊',nm:'Allergy',count:0},
+  {id:'490203',em:'🩹',nm:'First Aid',count:0},
+  {id:'490210',em:'🍼',nm:'Diapers',count:0},
+  {id:'490211',em:'🧻',nm:'Baby Wipes',count:0},
+  {id:'490212',em:'🥣',nm:'Baby Food',count:0},
+  {id:'490213',em:'🍼',nm:'Baby Formula',count:0},
+  {id:'490220',em:'🐾',nm:'Dog Food',count:0},
+  {id:'490221',em:'🐾',nm:'Cat Food',count:0},
+  {id:'490222',em:'🐾',nm:'Pet Treats',count:0},
 ];
-
-// ── PRODUCTS ──────────────────────────────────────────────────────
 const PRODUCTS={
-  chips:[
-    {b:"Lay's",    n:"Lay's Classic",                    sz:"7.75 oz",  p:"$3.98", e:"🥔"},
-    {b:"Lay's",    n:"Lay's Classic Party Size",          sz:"13 oz",    p:"$5.48", e:"🥔"},
-    {b:"Lay's",    n:"Lay's Sour Cream & Onion",          sz:"7.75 oz",  p:"$3.98", e:"🥔"},
-    {b:"Lay's",    n:"Lay's BBQ",                         sz:"7.75 oz",  p:"$3.98", e:"🥔"},
-    {b:"Lay's",    n:"Lay's Salt & Vinegar",               sz:"7.75 oz",  p:"$3.98", e:"🥔"},
-    {b:"Lay's",    n:"Lay's Cheddar & Sour Cream",        sz:"7.75 oz",  p:"$3.98", e:"🥔"},
-    {b:"Lay's",    n:"Lay's Flamin' Hot",                 sz:"7.75 oz",  p:"$3.98", e:"🔥"},
-    {b:"Lay's",    n:"Lay's Limon",                       sz:"7.75 oz",  p:"$3.98", e:"🍋"},
-    {b:"Lay's",    n:"Lay's Dill Pickle",                 sz:"7.75 oz",  p:"$3.98", e:"🥒"},
-    {b:"Ruffles",  n:"Ruffles Original",                  sz:"8.5 oz",   p:"$3.98", e:"🥔"},
-    {b:"Ruffles",  n:"Ruffles Original Party Size",       sz:"13 oz",    p:"$5.48", e:"🥔"},
-    {b:"Ruffles",  n:"Ruffles Cheddar & Sour Cream",      sz:"8.5 oz",   p:"$3.98", e:"🧀"},
-    {b:"Ruffles",  n:"Ruffles Flamin' Hot",               sz:"8 oz",     p:"$3.98", e:"🔥"},
-    {b:"Ruffles",  n:"Ruffles Queso",                     sz:"8.5 oz",   p:"$3.98", e:"🧀"},
-    {b:"Pringles", n:"Pringles Original",                 sz:"5.2 oz",   p:"$2.48", e:"🥔"},
-    {b:"Pringles", n:"Pringles Sour Cream & Onion",       sz:"5.2 oz",   p:"$2.48", e:"🥔"},
-    {b:"Pringles", n:"Pringles Cheddar",                  sz:"5.2 oz",   p:"$2.48", e:"🧀"},
-    {b:"Pringles", n:"Pringles BBQ",                      sz:"5.2 oz",   p:"$2.48", e:"🥔"},
-    {b:"Pringles", n:"Pringles Ranch",                    sz:"5.2 oz",   p:"$2.48", e:"🥔"},
-    {b:"Pringles", n:"Pringles Pizza",                    sz:"5.2 oz",   p:"$2.48", e:"🍕"},
-    {b:"Pringles", n:"Pringles Loaded Baked Potato",      sz:"5.5 oz",   p:"$2.48", e:"🥔"},
-    {b:"Pringles", n:"Pringles Flamin' Hot",              sz:"5.2 oz",   p:"$2.48", e:"🔥"},
-    {b:"Kettle",   n:"Kettle Brand Sea Salt",             sz:"8.5 oz",   p:"$3.98", e:"🥔"},
-    {b:"Kettle",   n:"Kettle Brand Honey Dijon",          sz:"8.5 oz",   p:"$3.98", e:"🍯"},
-    {b:"Kettle",   n:"Kettle Brand Jalapeño",             sz:"8.5 oz",   p:"$3.98", e:"🌶️"},
-    {b:"Kettle",   n:"Kettle Brand Sea Salt & Vinegar",   sz:"8.5 oz",   p:"$3.98", e:"🥔"},
-    {b:"H-E-B",    n:"H-E-B Wavy Potato Chips",           sz:"12 oz",    p:"$2.98", e:"🥔"},
-    {b:"H-E-B",    n:"H-E-B Thin Chips Limón",            sz:"9 oz",     p:"$2.98", e:"🍋"},
-    {b:"H-E-B",    n:"H-E-B Potato Chip Variety Pack",    sz:"10 ct",    p:"$4.77", e:"🥔"},
-    {b:"Frito-Lay",n:"Frito-Lay Flavor Mix Multipack",    sz:"18 ct",    p:"$2.28", e:"🥔"},
+  '490589':[
   ],
-  tortilla:[
-    {b:"Doritos",  n:"Doritos Nacho Cheese",              sz:"9.25 oz",  p:"$4.28", e:"🔺"},
-    {b:"Doritos",  n:"Doritos Nacho Cheese Party Size",   sz:"14.5 oz",  p:"$6.48", e:"🔺"},
-    {b:"Doritos",  n:"Doritos Cool Ranch",                sz:"9.25 oz",  p:"$4.28", e:"🔵"},
-    {b:"Doritos",  n:"Doritos Spicy Nacho",               sz:"9.25 oz",  p:"$4.28", e:"🔥"},
-    {b:"Doritos",  n:"Doritos Flamin' Hot Nacho",         sz:"9.25 oz",  p:"$4.28", e:"🔥"},
-    {b:"Doritos",  n:"Doritos Flamas",                    sz:"9.25 oz",  p:"$4.28", e:"🌶️"},
-    {b:"Doritos",  n:"Doritos Tapatio",                   sz:"9.25 oz",  p:"$4.28", e:"🌶️"},
-    {b:"Doritos",  n:"Doritos Toasted Corn",              sz:"9.25 oz",  p:"$4.28", e:"🌽"},
-    {b:"Tostitos", n:"Tostitos Restaurant Style",         sz:"13 oz",    p:"$4.98", e:"🌽"},
-    {b:"Tostitos", n:"Tostitos Scoops",                   sz:"10 oz",    p:"$4.48", e:"🌽"},
-    {b:"Tostitos", n:"Tostitos Scoops Party Size",        sz:"14.75 oz", p:"$6.48", e:"🌽"},
-    {b:"Tostitos", n:"Tostitos Hint of Lime",             sz:"11 oz",    p:"$4.48", e:"🍋"},
-    {b:"Tostitos", n:"Tostitos Multigrain",               sz:"10 oz",    p:"$4.48", e:"🌽"},
-    {b:"Fritos",   n:"Fritos Original Corn Chips",        sz:"9.25 oz",  p:"$3.98", e:"🌽"},
-    {b:"Fritos",   n:"Fritos Flamin' Hot",                sz:"9.25 oz",  p:"$3.98", e:"🔥"},
-    {b:"Fritos",   n:"Fritos Scoops",                     sz:"9.25 oz",  p:"$3.98", e:"🌽"},
-    {b:"Fritos",   n:"Fritos Chili Cheese",               sz:"9.25 oz",  p:"$3.98", e:"🧀"},
-    {b:"Takis",    n:"Takis Fuego",                       sz:"9.9 oz",   p:"$4.48", e:"🔥"},
-    {b:"Takis",    n:"Takis Nitro",                       sz:"9.9 oz",   p:"$4.48", e:"🔥"},
-    {b:"Takis",    n:"Takis Blue Heat",                   sz:"9.9 oz",   p:"$4.48", e:"🔥"},
-    {b:"Takis",    n:"Takis Variety Pack",                sz:"18 ct",    p:"$9.97", e:"🔥"},
-    {b:"H-E-B",    n:"H-E-B Texas Dippers Corn Chips",   sz:"15 oz",    p:"$2.98", e:"🌽"},
+  '490590':[
   ],
-  popcorn:[
-    {b:"Orville",   n:"Orville Movie Theater Butter",     sz:"6 ct",     p:"$3.98", e:"🍿"},
-    {b:"Orville",   n:"Orville Simply Salted",            sz:"6 ct",     p:"$3.98", e:"🍿"},
-    {b:"Orville",   n:"Orville SmartPop Butter",          sz:"6 ct",     p:"$3.98", e:"🍿"},
-    {b:"Orville",   n:"Orville White Popcorn",            sz:"6 ct",     p:"$3.98", e:"🍿"},
-    {b:"Act II",    n:"Act II Butter Lovers",             sz:"6 ct",     p:"$2.98", e:"🍿"},
-    {b:"Act II",    n:"Act II Kettle Corn",               sz:"6 ct",     p:"$2.98", e:"🍿"},
-    {b:"Pop Secret",n:"Pop Secret Movie Theater Butter",  sz:"6 ct",     p:"$3.48", e:"🍿"},
-    {b:"Pop Secret",n:"Pop Secret Homestyle",             sz:"6 ct",     p:"$3.48", e:"🍿"},
-    {b:"SkinnyPop", n:"SkinnyPop Original",               sz:"4.4 oz",   p:"$3.48", e:"🍿"},
-    {b:"SkinnyPop", n:"SkinnyPop White Cheddar",          sz:"4.4 oz",   p:"$3.48", e:"🧀"},
-    {b:"SkinnyPop", n:"SkinnyPop Jalapeño",               sz:"4.4 oz",   p:"$3.48", e:"🌶️"},
-    {b:"Smartfood", n:"Smartfood White Cheddar",          sz:"6.75 oz",  p:"$3.48", e:"🧀"},
-    {b:"Boom Chicka",n:"Angie's Boom Chicka Pop Sea Salt",sz:"4.4 oz",  p:"$3.48", e:"🍿"},
-    {b:"Cheetos",   n:"Cheetos Popcorn Cheddar",          sz:"7 oz",     p:"$3.98", e:"🧡"},
-    {b:"Cheetos",   n:"Cheetos Popcorn Flamin' Hot",      sz:"7 oz",     p:"$3.98", e:"🔥"},
-    {b:"H-E-B",     n:"H-E-B Butter Microwave Popcorn",  sz:"6 ct",     p:"$2.48", e:"🍿"},
+  '490591':[
   ],
-  crackers:[
-    {b:"Ritz",      n:"Ritz Original",                    sz:"13.7 oz",  p:"$3.98", e:"🫙"},
-    {b:"Ritz",      n:"Ritz Whole Wheat",                 sz:"13.7 oz",  p:"$3.98", e:"🫙"},
-    {b:"Ritz",      n:"Ritz Bits Cheese",                 sz:"8.8 oz",   p:"$3.48", e:"🧀"},
-    {b:"Ritz",      n:"Ritz Bits Peanut Butter",          sz:"8.8 oz",   p:"$3.48", e:"🥜"},
-    {b:"Cheez-It",  n:"Cheez-It Original",                sz:"12.4 oz",  p:"$4.48", e:"🧀"},
-    {b:"Cheez-It",  n:"Cheez-It Extra Toasty",            sz:"12.4 oz",  p:"$4.48", e:"🧀"},
-    {b:"Cheez-It",  n:"Cheez-It White Cheddar",           sz:"12.4 oz",  p:"$4.48", e:"🧀"},
-    {b:"Cheez-It",  n:"Cheez-It Pepper Jack",             sz:"12.4 oz",  p:"$4.48", e:"🌶️"},
-    {b:"Cheez-It",  n:"Cheez-It Grooves Sharp Cheddar",   sz:"9 oz",     p:"$4.48", e:"🧀"},
-    {b:"Goldfish",  n:"Goldfish Cheddar",                 sz:"6.6 oz",   p:"$2.98", e:"🐟"},
-    {b:"Goldfish",  n:"Goldfish Pizza",                   sz:"6.6 oz",   p:"$2.98", e:"🐟"},
-    {b:"Goldfish",  n:"Goldfish Pretzel",                 sz:"6.6 oz",   p:"$2.98", e:"🐟"},
-    {b:"Goldfish",  n:"Goldfish Flavor Blasted Xtra Cheddar",sz:"6.6 oz",p:"$2.98",e:"🐟"},
-    {b:"Wheat Thins",n:"Wheat Thins Original",            sz:"9.1 oz",   p:"$3.98", e:"🌾"},
-    {b:"Wheat Thins",n:"Wheat Thins Reduced Fat",         sz:"9 oz",     p:"$3.98", e:"🌾"},
-    {b:"Wheat Thins",n:"Wheat Thins Sundried Tomato Basil",sz:"9 oz",   p:"$3.98", e:"🍅"},
-    {b:"Triscuit",  n:"Triscuit Original",                sz:"8.5 oz",   p:"$3.98", e:"🫙"},
-    {b:"Triscuit",  n:"Triscuit Rosemary & Olive Oil",    sz:"8.5 oz",   p:"$3.98", e:"🫙"},
-    {b:"Triscuit",  n:"Triscuit Fire Roasted Tomato",     sz:"8.5 oz",   p:"$3.98", e:"🍅"},
-    {b:"Club",      n:"Keebler Club Original",            sz:"13.7 oz",  p:"$3.48", e:"🫙"},
-    {b:"H-E-B",     n:"H-E-B Table Water Crackers",       sz:"9 oz",     p:"$2.48", e:"🫙"},
+  '490592':[
   ],
-  pretzels:[
-    {b:"Snyder's",  n:"Snyder's Pretzel Rods",            sz:"9 oz",     p:"$3.48", e:"🥨"},
-    {b:"Snyder's",  n:"Snyder's Pretzel Snaps",           sz:"10 oz",    p:"$3.48", e:"🥨"},
-    {b:"Snyder's",  n:"Snyder's Honey Mustard",           sz:"10 oz",    p:"$3.48", e:"🥨"},
-    {b:"Snyder's",  n:"Snyder's Buffalo Wing",            sz:"10 oz",    p:"$3.48", e:"🥨"},
-    {b:"Rold Gold", n:"Rold Gold Classic Tiny Twists",    sz:"16 oz",    p:"$3.48", e:"🥨"},
-    {b:"Rold Gold", n:"Rold Gold Sticks",                 sz:"12 oz",    p:"$3.48", e:"🥨"},
-    {b:"Dot's",     n:"Dot's Homestyle Original",         sz:"16 oz",    p:"$4.48", e:"🥨"},
-    {b:"Dot's",     n:"Dot's Honey Mustard",              sz:"16 oz",    p:"$4.48", e:"🥨"},
-    {b:"Cheetos",   n:"Cheetos Crunchy",                  sz:"8.5 oz",   p:"$3.98", e:"🧡"},
-    {b:"Cheetos",   n:"Cheetos Crunchy Party Size",       sz:"15 oz",    p:"$5.98", e:"🧡"},
-    {b:"Cheetos",   n:"Cheetos Puffs",                    sz:"8 oz",     p:"$3.98", e:"🧡"},
-    {b:"Cheetos",   n:"Cheetos Flamin' Hot Crunchy",      sz:"8.5 oz",   p:"$3.98", e:"🔥"},
-    {b:"Cheetos",   n:"Cheetos Flamin' Hot Puffs",        sz:"8 oz",     p:"$3.98", e:"🔥"},
-    {b:"Cheetos",   n:"Cheetos Simply White Cheddar Puffs",sz:"8 oz",   p:"$4.48", e:"🧀"},
-    {b:"Funyuns",   n:"Funyuns Original Onion Rings",     sz:"6 oz",     p:"$3.28", e:"🧅"},
-    {b:"Funyuns",   n:"Funyuns Flamin' Hot",              sz:"6 oz",     p:"$3.28", e:"🔥"},
-    {b:"Veggie Straws",n:"Veggie Straws Sea Salt",        sz:"7 oz",     p:"$3.98", e:"🥕"},
-    {b:"Pirate's Booty",n:"Pirate's Booty White Cheddar", sz:"6 oz",    p:"$3.98", e:"🧀"},
-    {b:"H-E-B",     n:"H-E-B Mini Pretzels",              sz:"16 oz",    p:"$2.48", e:"🥨"},
-    {b:"H-E-B",     n:"H-E-B Cheddar Cheese Puffs",       sz:"8 oz",     p:"$2.48", e:"🧡"},
+  '490593':[
   ],
-  candy:[
-    {b:"Reese's",   n:"Reese's Peanut Butter Cups",       sz:"10.5 oz",  p:"$4.98", e:"🍫"},
-    {b:"Reese's",   n:"Reese's Pieces",                   sz:"10 oz",    p:"$3.98", e:"🍬"},
-    {b:"M&M's",     n:"M&M's Milk Chocolate",             sz:"10.7 oz",  p:"$3.98", e:"🍫"},
-    {b:"M&M's",     n:"M&M's Peanut",                     sz:"10.7 oz",  p:"$3.98", e:"🍫"},
-    {b:"M&M's",     n:"M&M's Peanut Butter",              sz:"9.9 oz",   p:"$3.98", e:"🍫"},
-    {b:"Snickers",  n:"Snickers Original",                sz:"10.59 oz", p:"$3.98", e:"🍫"},
-    {b:"Kit Kat",   n:"Kit Kat Milk Chocolate",           sz:"10.78 oz", p:"$3.98", e:"🍫"},
-    {b:"Twix",      n:"Twix Caramel",                     sz:"9.9 oz",   p:"$3.98", e:"🍫"},
-    {b:"Skittles",  n:"Skittles Original",                sz:"9 oz",     p:"$2.98", e:"🌈"},
-    {b:"Skittles",  n:"Skittles Wild Berry",              sz:"9 oz",     p:"$2.98", e:"🌈"},
-    {b:"Skittles",  n:"Skittles Sour",                    sz:"9 oz",     p:"$2.98", e:"🌈"},
-    {b:"Sour Patch",n:"Sour Patch Kids Original",         sz:"8 oz",     p:"$2.98", e:"🍬"},
-    {b:"Sour Patch",n:"Sour Patch Kids Watermelon",       sz:"8 oz",     p:"$2.98", e:"🍉"},
-    {b:"Starburst", n:"Starburst Original",               sz:"7.8 oz",   p:"$2.98", e:"🍬"},
-    {b:"Jolly Rancher",n:"Jolly Rancher Hard Candy",      sz:"7 oz",     p:"$2.98", e:"🍬"},
-    {b:"Nerds",     n:"Nerds Gummy Clusters",             sz:"3 oz",     p:"$2.48", e:"🍬"},
-    {b:"Nerds",     n:"Nerds Original",                   sz:"5 oz",     p:"$2.98", e:"🍬"},
-    {b:"Twizzlers", n:"Twizzlers Strawberry",             sz:"11 oz",    p:"$3.48", e:"🍬"},
-    {b:"Hershey's", n:"Hershey's Milk Chocolate Bar",     sz:"6.8 oz",   p:"$3.98", e:"🍫"},
-    {b:"Hershey's", n:"Hershey's Kisses Milk Chocolate",  sz:"10.1 oz",  p:"$3.98", e:"🍫"},
-    {b:"Hershey's", n:"Hershey's Cookies & Cream Bar",    sz:"6.3 oz",   p:"$3.98", e:"🍫"},
-    {b:"Hershey's", n:"Hershey's Almond Bar",             sz:"6.8 oz",   p:"$3.98", e:"🍫"},
+  '490600':[
   ],
-  cookies:[
-    {b:"Oreo",      n:"Oreo Original",                    sz:"13.29 oz", p:"$3.98", e:"⚫"},
-    {b:"Oreo",      n:"Oreo Double Stuf",                 sz:"14.03 oz", p:"$3.98", e:"⚫"},
-    {b:"Oreo",      n:"Oreo Golden",                      sz:"13.29 oz", p:"$3.98", e:"🟡"},
-    {b:"Oreo",      n:"Oreo Mint",                        sz:"13.29 oz", p:"$3.98", e:"🟢"},
-    {b:"Oreo",      n:"Oreo Peanut Butter",               sz:"13.29 oz", p:"$3.98", e:"🥜"},
-    {b:"Chips Ahoy",n:"Chips Ahoy Original",              sz:"13 oz",    p:"$3.98", e:"🍪"},
-    {b:"Chips Ahoy",n:"Chips Ahoy Chewy",                 sz:"13 oz",    p:"$3.98", e:"🍪"},
-    {b:"Chips Ahoy",n:"Chips Ahoy Chunky",                sz:"11.75 oz", p:"$3.98", e:"🍪"},
-    {b:"Nutter Butter",n:"Nutter Butter Original",        sz:"11.3 oz",  p:"$3.98", e:"🥜"},
-    {b:"Keebler",   n:"Keebler Fudge Stripes Original",   sz:"11.5 oz",  p:"$3.48", e:"🍪"},
-    {b:"Keebler",   n:"Keebler Chips Deluxe Original",    sz:"11.3 oz",  p:"$3.48", e:"🍪"},
-    {b:"Pepperidge Farm",n:"Pepperidge Farm Milano Dark Chocolate",sz:"6 oz",p:"$3.98",e:"🍪"},
-    {b:"Lofthouse", n:"Lofthouse Frosted Sugar Cookies",  sz:"13.5 oz",  p:"$3.98", e:"🍪"},
-    {b:"H-E-B",     n:"H-E-B Chocolate Chip Cookies",     sz:"13 oz",    p:"$2.98", e:"🍪"},
-    {b:"H-E-B",     n:"H-E-B Snickerdoodle Cookies",      sz:"12 oz",    p:"$2.98", e:"🍪"},
+  '490601':[
   ],
-  icecream:[
-    {b:"Blue Bell",  n:"Blue Bell Homemade Vanilla",       sz:"half gal", p:"$7.98", e:"🍨"},
-    {b:"Blue Bell",  n:"Blue Bell Dutch Chocolate",        sz:"half gal", p:"$7.98", e:"🍫"},
-    {b:"Blue Bell",  n:"Blue Bell Cookies 'n Cream",       sz:"half gal", p:"$7.98", e:"🍪"},
-    {b:"Blue Bell",  n:"Blue Bell Strawberry",             sz:"half gal", p:"$7.98", e:"🍓"},
-    {b:"Blue Bell",  n:"Blue Bell Mint Chocolate Chip",    sz:"half gal", p:"$7.98", e:"🌿"},
-    {b:"Blue Bell",  n:"Blue Bell Butter Crunch",          sz:"half gal", p:"$7.98", e:"🍨"},
-    {b:"H-E-B",      n:"H-E-B Creamy Creations Vanilla",  sz:"half gal", p:"$4.98", e:"🍨"},
-    {b:"H-E-B",      n:"H-E-B Creamy Creations Chocolate",sz:"half gal", p:"$4.98", e:"🍫"},
-    {b:"H-E-B",      n:"H-E-B Creamy Creations Cookies & Cream",sz:"half gal",p:"$4.98",e:"🍪"},
-    {b:"H-E-B",      n:"H-E-B Creamy Creations Strawberry",sz:"half gal",p:"$4.98", e:"🍓"},
-    {b:"Breyers",    n:"Breyers Natural Vanilla",          sz:"48 oz",    p:"$5.98", e:"🍨"},
-    {b:"Breyers",    n:"Breyers Chocolate",                sz:"48 oz",    p:"$5.98", e:"🍫"},
-    {b:"Breyers",    n:"Breyers Cookies & Cream",          sz:"48 oz",    p:"$5.98", e:"🍪"},
-    {b:"Häagen-Dazs",n:"Häagen-Dazs Vanilla",             sz:"14 oz",    p:"$5.48", e:"🍨"},
-    {b:"Häagen-Dazs",n:"Häagen-Dazs Strawberry",          sz:"14 oz",    p:"$5.48", e:"🍓"},
-    {b:"Ben & Jerry's",n:"Ben & Jerry's Cookie Dough",     sz:"16 oz",    p:"$5.98", e:"🍪"},
-    {b:"Ben & Jerry's",n:"Ben & Jerry's Cherry Garcia",    sz:"16 oz",    p:"$5.98", e:"🍒"},
-    {b:"Popsicle",   n:"Popsicle Rainbow Ice Pops",        sz:"18 ct",    p:"$4.48", e:"🌈"},
-    {b:"Popsicle",   n:"Popsicle Fudgsicle",               sz:"12 ct",    p:"$4.48", e:"🍫"},
-    {b:"Drumstick",  n:"Drumstick Classic Vanilla",        sz:"8 ct",     p:"$5.98", e:"🍦"},
-    {b:"Klondike",   n:"Klondike Original Bar",            sz:"6 ct",     p:"$4.98", e:"🍫"},
+  '490700':[
   ],
-  frozen:[
-    {b:"Tyson",      n:"Tyson Chicken Nuggets",            sz:"32 oz",    p:"$7.98", e:"🍗"},
-    {b:"Tyson",      n:"Tyson Any'tizers Popcorn Chicken", sz:"28 oz",    p:"$7.98", e:"🍗"},
-    {b:"Tyson",      n:"Tyson Chicken Strips",             sz:"25 oz",    p:"$8.98", e:"🍗"},
-    {b:"Perdue",     n:"Perdue Chicken Nuggets",           sz:"22 oz",    p:"$6.98", e:"🍗"},
-    {b:"Ore-Ida",    n:"Ore-Ida Golden Fries",             sz:"28 oz",    p:"$4.48", e:"🍟"},
-    {b:"Ore-Ida",    n:"Ore-Ida Extra Crispy Fries",       sz:"28 oz",    p:"$4.48", e:"🍟"},
-    {b:"Ore-Ida",    n:"Ore-Ida Tater Tots",               sz:"28 oz",    p:"$4.48", e:"🥔"},
-    {b:"State Fair", n:"State Fair Corn Dogs Classic",     sz:"16 ct",    p:"$6.98", e:"🌭"},
-    {b:"Hot Pockets",n:"Hot Pockets Pepperoni Pizza",      sz:"2 ct",     p:"$2.78", e:"🍕"},
-    {b:"Hot Pockets",n:"Hot Pockets Four Cheese Pizza",    sz:"2 ct",     p:"$2.78", e:"🧀"},
-    {b:"El Monterey",n:"El Monterey Bean & Cheese Burritos",sz:"8 ct",   p:"$4.98", e:"🌯"},
-    {b:"El Monterey",n:"El Monterey Breakfast Burritos",   sz:"8 ct",     p:"$4.98", e:"🌯"},
-    {b:"Birds Eye",  n:"Birds Eye Steamfresh Broccoli",    sz:"10.8 oz",  p:"$1.98", e:"🥦"},
-    {b:"Birds Eye",  n:"Birds Eye Steamfresh Mixed Veggies",sz:"10.8 oz", p:"$1.98", e:"🥦"},
-    {b:"Stouffer's", n:"Stouffer's Mac & Cheese",          sz:"12 oz",    p:"$3.28", e:"🧀"},
-    {b:"Stouffer's", n:"Stouffer's Lasagna",               sz:"19 oz",    p:"$5.98", e:"🍝"},
-    {b:"Amy's",      n:"Amy's Macaroni & Cheese",          sz:"9 oz",     p:"$5.48", e:"🧀"},
-    {b:"Eggo",       n:"Eggo Homestyle Waffles",           sz:"12.3 oz",  p:"$3.48", e:"🧇"},
-    {b:"Eggo",       n:"Eggo Buttermilk Waffles",          sz:"12.3 oz",  p:"$3.48", e:"🧇"},
-    {b:"Eggo",       n:"Eggo Blueberry Waffles",           sz:"12.3 oz",  p:"$3.48", e:"🫐"},
+  '490701':[
   ],
-  pizza:[
-    {b:"DiGiorno",   n:"DiGiorno Rising Crust Pepperoni",  sz:"27.5 oz",  p:"$7.98", e:"🍕"},
-    {b:"DiGiorno",   n:"DiGiorno Rising Crust 4 Cheese",   sz:"27 oz",    p:"$7.98", e:"🍕"},
-    {b:"DiGiorno",   n:"DiGiorno Thin Crispy Crust Pepperoni",sz:"24.8 oz",p:"$6.98",e:"🍕"},
-    {b:"DiGiorno",   n:"DiGiorno Stuffed Crust Pepperoni", sz:"32 oz",    p:"$8.98", e:"🍕"},
-    {b:"Red Baron",  n:"Red Baron Classic Pepperoni",      sz:"20.6 oz",  p:"$5.48", e:"🍕"},
-    {b:"Red Baron",  n:"Red Baron Classic 4 Cheese",       sz:"19.1 oz",  p:"$5.48", e:"🍕"},
-    {b:"Totino's",   n:"Totino's Pizza Rolls Pepperoni",   sz:"40 ct",    p:"$5.48", e:"🍕"},
-    {b:"Totino's",   n:"Totino's Pizza Rolls Cheese",      sz:"40 ct",    p:"$5.48", e:"🍕"},
-    {b:"Totino's",   n:"Totino's Party Pizza Pepperoni",   sz:"10.9 oz",  p:"$1.98", e:"🍕"},
-    {b:"Jack's",     n:"Jack's Original Pepperoni",        sz:"15.7 oz",  p:"$4.48", e:"🍕"},
-    {b:"H-E-B",      n:"H-E-B Thin Crust Pepperoni",       sz:"14.7 oz",  p:"$4.98", e:"🍕"},
-    {b:"H-E-B",      n:"H-E-B Thin Crust Supreme",         sz:"15 oz",    p:"$4.98", e:"🍕"},
+  '490702':[
   ],
-  breakfast:[
-    {b:"Kellogg's",  n:"Frosted Flakes",                   sz:"13.5 oz",  p:"$3.98", e:"🥣"},
-    {b:"Kellogg's",  n:"Froot Loops",                      sz:"10.1 oz",  p:"$3.98", e:"🌈"},
-    {b:"Kellogg's",  n:"Corn Flakes",                      sz:"12 oz",    p:"$3.48", e:"🥣"},
-    {b:"Kellogg's",  n:"Special K Original",               sz:"12 oz",    p:"$3.98", e:"🥣"},
-    {b:"Kellogg's",  n:"Pop-Tarts Brown Sugar Cinnamon",   sz:"16 ct",    p:"$4.28", e:"🍫"},
-    {b:"Kellogg's",  n:"Pop-Tarts Strawberry",             sz:"16 ct",    p:"$4.28", e:"🍓"},
-    {b:"General Mills",n:"Honey Nut Cheerios",             sz:"10.8 oz",  p:"$3.98", e:"🥣"},
-    {b:"General Mills",n:"Cheerios Original",              sz:"8.9 oz",   p:"$3.98", e:"🥣"},
-    {b:"General Mills",n:"Cinnamon Toast Crunch",          sz:"12 oz",    p:"$3.98", e:"🥣"},
-    {b:"General Mills",n:"Lucky Charms",                   sz:"10.5 oz",  p:"$3.98", e:"🌈"},
-    {b:"General Mills",n:"Cocoa Puffs",                    sz:"10.4 oz",  p:"$3.98", e:"🍫"},
-    {b:"Post",       n:"Honey Bunches of Oats",            sz:"14.5 oz",  p:"$3.98", e:"🥣"},
-    {b:"Quaker",     n:"Quaker Instant Oatmeal Original",  sz:"10 pk",    p:"$3.28", e:"🫙"},
-    {b:"Quaker",     n:"Quaker Instant Oatmeal Maple Brown Sugar",sz:"10 pk",p:"$3.28",e:"🍯"},
-    {b:"Quaker",     n:"Quaker Old Fashioned Oats",        sz:"42 oz",    p:"$4.98", e:"🫙"},
-    {b:"Bisquick",   n:"Bisquick Original Pancake Mix",    sz:"40 oz",    p:"$4.98", e:"🥞"},
-    {b:"Krusteaz",   n:"Krusteaz Buttermilk Pancake Mix",  sz:"32 oz",    p:"$3.98", e:"🥞"},
-    {b:"Jimmy Dean", n:"Jimmy Dean Sausage Links",          sz:"12 oz",    p:"$4.48", e:"🌭"},
-    {b:"Jimmy Dean", n:"Jimmy Dean Sausage Patties",        sz:"12 oz",    p:"$4.48", e:"🌭"},
-    {b:"Jimmy Dean", n:"Jimmy Dean Croissant Sandwich",    sz:"8 ct",     p:"$8.98", e:"🥐"},
-    {b:"Nutri-Grain",n:"Nutri-Grain Strawberry Bars",      sz:"8 ct",     p:"$3.48", e:"🍓"},
-    {b:"Nutri-Grain",n:"Nutri-Grain Blueberry Bars",       sz:"8 ct",     p:"$3.48", e:"🫐"},
-    {b:"H-E-B",      n:"H-E-B Large Eggs Dozen",           sz:"12 ct",    p:"$2.98", e:"🥚"},
-    {b:"H-E-B",      n:"H-E-B Large Eggs 18 ct",           sz:"18 ct",    p:"$3.98", e:"🥚"},
+  '490703':[
   ],
-  bread:[
-    {b:"Wonder",     n:"Wonder Classic White Bread",       sz:"20 oz",    p:"$2.98", e:"🍞"},
-    {b:"Nature's Own",n:"Nature's Own Honey Wheat Bread",  sz:"20 oz",    p:"$3.48", e:"🍞"},
-    {b:"Nature's Own",n:"Nature's Own White Wheat Bread",  sz:"20 oz",    p:"$3.48", e:"🍞"},
-    {b:"Sara Lee",   n:"Sara Lee Soft & Smooth White",     sz:"20 oz",    p:"$3.48", e:"🍞"},
-    {b:"Dave's",     n:"Dave's Killer Bread 21 Whole Grains",sz:"27 oz",  p:"$5.98", e:"🍞"},
-    {b:"Mission",    n:"Mission Flour Tortillas Soft Taco",sz:"30 ct",    p:"$3.98", e:"🫓"},
-    {b:"Mission",    n:"Mission Flour Tortillas Burrito Size",sz:"10 ct", p:"$3.48", e:"🫓"},
-    {b:"Mission",    n:"Mission Corn Tortillas",           sz:"30 ct",    p:"$2.98", e:"🫓"},
-    {b:"H-E-B",      n:"H-E-B Flour Tortillas Fajita Size",sz:"20 ct",   p:"$2.98", e:"🫓"},
-    {b:"H-E-B",      n:"H-E-B Flour Tortillas Burrito Size",sz:"10 ct",  p:"$2.48", e:"🫓"},
-    {b:"H-E-B",      n:"H-E-B Corn Tortillas",             sz:"30 ct",    p:"$2.48", e:"🫓"},
-    {b:"Thomas'",    n:"Thomas' Original English Muffins", sz:"6 ct",     p:"$3.48", e:"🫓"},
-    {b:"Thomas'",    n:"Thomas' Plain Bagels",             sz:"6 ct",     p:"$3.48", e:"🥯"},
-    {b:"Thomas'",    n:"Thomas' Everything Bagels",        sz:"6 ct",     p:"$3.48", e:"🥯"},
-    {b:"Pepperidge Farm",n:"Pepperidge Farm Hamburger Buns",sz:"8 ct",   p:"$3.48", e:"🍔"},
-    {b:"H-E-B",      n:"H-E-B Hot Dog Buns",               sz:"8 ct",     p:"$2.48", e:"🌭"},
-    {b:"H-E-B",      n:"H-E-B Bolillo Rolls Fresh Bakery", sz:"6 ct",     p:"$2.98", e:"🥐"},
-    {b:"H-E-B",      n:"H-E-B Glazed Donuts Fresh Bakery", sz:"6 ct",     p:"$2.98", e:"🍩"},
+  '490200':[
   ],
-  dairy:[
-    {b:"H-E-B",      n:"H-E-B Whole Milk",                 sz:"1 gallon", p:"$3.28", e:"🥛"},
-    {b:"H-E-B",      n:"H-E-B 2% Reduced Fat Milk",        sz:"1 gallon", p:"$3.28", e:"🥛"},
-    {b:"H-E-B",      n:"H-E-B Skim Milk",                  sz:"1 gallon", p:"$3.28", e:"🥛"},
-    {b:"H-E-B",      n:"H-E-B Whole Milk Half Gallon",     sz:"half gal", p:"$2.28", e:"🥛"},
-    {b:"Nesquik",    n:"Nesquik Chocolate Milk",            sz:"14 fl oz", p:"$1.78", e:"🍫"},
-    {b:"Horizon",    n:"Horizon Organic Whole Milk",        sz:"half gal", p:"$4.98", e:"🥛"},
-    {b:"Fairlife",   n:"Fairlife Whole Milk",               sz:"52 fl oz", p:"$5.98", e:"🥛"},
-    {b:"Silk",       n:"Silk Almond Milk Original",         sz:"half gal", p:"$3.98", e:"🌰"},
-    {b:"Silk",       n:"Silk Oat Milk Original",            sz:"half gal", p:"$3.98", e:"🌾"},
-    {b:"Land O'Lakes",n:"Land O'Lakes Unsalted Butter",    sz:"1 lb",     p:"$4.98", e:"🧈"},
-    {b:"Land O'Lakes",n:"Land O'Lakes Salted Butter",      sz:"1 lb",     p:"$4.98", e:"🧈"},
-    {b:"Kerrygold",  n:"Kerrygold Pure Irish Butter",      sz:"8 oz",     p:"$4.48", e:"🧈"},
-    {b:"H-E-B",      n:"H-E-B Shredded Cheddar Cheese",    sz:"8 oz",     p:"$2.98", e:"🧀"},
-    {b:"H-E-B",      n:"H-E-B Shredded Mexican Blend",     sz:"8 oz",     p:"$2.98", e:"🧀"},
-    {b:"H-E-B",      n:"H-E-B Shredded Mozzarella",        sz:"8 oz",     p:"$2.98", e:"🧀"},
-    {b:"Kraft",      n:"Kraft American Singles",            sz:"12 oz",    p:"$3.98", e:"🧀"},
-    {b:"Sargento",   n:"Sargento Sliced Colby Jack",        sz:"7 oz",     p:"$3.48", e:"🧀"},
-    {b:"Philadelphia",n:"Philadelphia Original Cream Cheese",sz:"8 oz",  p:"$3.48", e:"🧀"},
-    {b:"Daisy",      n:"Daisy Sour Cream",                  sz:"16 oz",    p:"$2.98", e:"🍶"},
-    {b:"Chobani",    n:"Chobani Plain Nonfat Greek Yogurt", sz:"32 oz",    p:"$5.48", e:"🍦"},
-    {b:"Chobani",    n:"Chobani Strawberry Greek Yogurt",   sz:"5.3 oz",   p:"$1.48", e:"🍓"},
-    {b:"Yoplait",    n:"Yoplait Original Strawberry",       sz:"6 oz",     p:"$0.98", e:"🍓"},
+  '490201':[
   ],
-  meat:[
-    {b:"H-E-B",      n:"H-E-B 80/20 Ground Beef",          sz:"1 lb",     p:"$4.98", e:"🥩"},
-    {b:"H-E-B",      n:"H-E-B 93/7 Lean Ground Beef",      sz:"1 lb",     p:"$5.98", e:"🥩"},
-    {b:"H-E-B",      n:"H-E-B Boneless Chicken Breast",    sz:"per lb",   p:"$2.98/lb",e:"🍗"},
-    {b:"H-E-B",      n:"H-E-B Boneless Chicken Thighs",    sz:"per lb",   p:"$2.48/lb",e:"🍗"},
-    {b:"H-E-B",      n:"H-E-B Chicken Drumsticks",         sz:"per lb",   p:"$1.48/lb",e:"🍗"},
-    {b:"H-E-B",      n:"H-E-B Whole Chicken",              sz:"per lb",   p:"$1.18/lb",e:"🍗"},
-    {b:"H-E-B",      n:"H-E-B Pork Chops Bone-In",         sz:"per lb",   p:"$2.48/lb",e:"🥩"},
-    {b:"H-E-B",      n:"H-E-B Pork Tenderloin",            sz:"per lb",   p:"$3.98/lb",e:"🥩"},
-    {b:"H-E-B",      n:"H-E-B Baby Back Ribs",             sz:"per lb",   p:"$3.98/lb",e:"🍖"},
-    {b:"H-E-B",      n:"H-E-B Beef Fajita Strips",         sz:"per lb",   p:"$5.98/lb",e:"🥩"},
-    {b:"H-E-B",      n:"H-E-B Ribeye Steak",               sz:"per lb",   p:"$11.98/lb",e:"🥩"},
-    {b:"H-E-B",      n:"H-E-B Sirloin Steak",              sz:"per lb",   p:"$7.98/lb",e:"🥩"},
-    {b:"H-E-B",      n:"H-E-B Atlantic Salmon Fillet",     sz:"per lb",   p:"$8.98/lb",e:"🐟"},
-    {b:"H-E-B",      n:"H-E-B Tilapia Fillets",            sz:"per lb",   p:"$4.98/lb",e:"🐟"},
-    {b:"SeaPak",     n:"SeaPak Shrimp Scampi",              sz:"12 oz",    p:"$5.98", e:"🦐"},
-    {b:"Oscar Mayer",n:"Oscar Mayer Bacon Original",        sz:"12 oz",    p:"$4.98", e:"🥓"},
-    {b:"Oscar Mayer",n:"Oscar Mayer Thick Cut Bacon",       sz:"12 oz",    p:"$5.48", e:"🥓"},
-    {b:"Jimmy Dean", n:"Jimmy Dean Regular Pork Sausage Roll",sz:"16 oz", p:"$4.48", e:"🌭"},
-    {b:"Hillshire",  n:"Hillshire Farm Smoked Sausage",     sz:"13 oz",    p:"$3.98", e:"🌭"},
-    {b:"Oscar Mayer",n:"Oscar Mayer Beef Hot Dogs",         sz:"10 ct",    p:"$3.98", e:"🌭"},
-    {b:"Ball Park",  n:"Ball Park Beef Hot Dogs",           sz:"8 ct",     p:"$3.98", e:"🌭"},
+  '490100':[
   ],
-  deli:[
-    {b:"Oscar Mayer",n:"Oscar Mayer Deli Turkey Oven Roasted",sz:"9 oz", p:"$3.98", e:"🥪"},
-    {b:"Oscar Mayer",n:"Oscar Mayer Deli Turkey Smoked",    sz:"9 oz",    p:"$3.98", e:"🥪"},
-    {b:"Oscar Mayer",n:"Oscar Mayer Deli Ham Honey",        sz:"9 oz",    p:"$3.98", e:"🥩"},
-    {b:"Oscar Mayer",n:"Oscar Mayer Deli Ham Black Forest", sz:"9 oz",    p:"$3.98", e:"🥩"},
-    {b:"Hillshire",  n:"Hillshire Farm Thin Sliced Turkey", sz:"9 oz",    p:"$3.98", e:"🥪"},
-    {b:"Hillshire",  n:"Hillshire Farm Thin Sliced Ham",    sz:"9 oz",    p:"$3.98", e:"🥩"},
-    {b:"Boar's Head",n:"Boar's Head Ovengold Turkey",      sz:"per lb",   p:"$10.98/lb",e:"🥪"},
-    {b:"Boar's Head",n:"Boar's Head Honey Ham",            sz:"per lb",   p:"$9.98/lb",e:"🥩"},
-    {b:"H-E-B",      n:"H-E-B Deli Smoked Turkey",         sz:"per lb",   p:"$7.98/lb",e:"🥪"},
-    {b:"H-E-B",      n:"H-E-B Deli Honey Ham",             sz:"per lb",   p:"$7.98/lb",e:"🥩"},
+  '490101':[
   ],
-  produce:[
-    {b:"Fresh",      n:"Broccoli Crown",                    sz:"per lb",   p:"$1.48/lb",e:"🥦"},
-    {b:"Fresh",      n:"Baby Carrots",                      sz:"1 lb bag", p:"$1.48", e:"🥕"},
-    {b:"Fresh",      n:"Whole Carrots",                     sz:"2 lb bag", p:"$1.98", e:"🥕"},
-    {b:"Fresh",      n:"Roma Tomatoes",                     sz:"per lb",   p:"$0.98/lb",e:"🍅"},
-    {b:"Fresh",      n:"Vine Ripe Tomatoes",                sz:"per lb",   p:"$1.48/lb",e:"🍅"},
-    {b:"Fresh",      n:"Cherry Tomatoes",                   sz:"10 oz",    p:"$2.98", e:"🍅"},
-    {b:"Fresh",      n:"Cucumber",                          sz:"1 ct",     p:"$0.98", e:"🥒"},
-    {b:"Fresh",      n:"Yellow Onion",                      sz:"3 lb bag", p:"$2.48", e:"🧅"},
-    {b:"Fresh",      n:"White Onion",                       sz:"per lb",   p:"$0.88/lb",e:"🧅"},
-    {b:"Fresh",      n:"Green Bell Pepper",                 sz:"1 ct",     p:"$0.98", e:"🫑"},
-    {b:"Fresh",      n:"Red Bell Pepper",                   sz:"1 ct",     p:"$1.48", e:"🫑"},
-    {b:"Fresh",      n:"Jalapeños",                         sz:"per lb",   p:"$1.48/lb",e:"🌶️"},
-    {b:"Fresh",      n:"Avocados Hass",                     sz:"1 ct",     p:"$0.88", e:"🥑"},
-    {b:"Fresh",      n:"Avocados Bag",                      sz:"4 ct bag", p:"$3.48", e:"🥑"},
-    {b:"Fresh",      n:"Russet Potatoes",                   sz:"5 lb bag", p:"$3.98", e:"🥔"},
-    {b:"Fresh",      n:"Gold Potatoes",                     sz:"5 lb bag", p:"$4.98", e:"🥔"},
-    {b:"Fresh",      n:"Sweet Potatoes",                    sz:"per lb",   p:"$0.98/lb",e:"🥔"},
-    {b:"Fresh",      n:"Corn on the Cob",                   sz:"1 ct",     p:"$0.68", e:"🌽"},
-    {b:"Fresh",      n:"Celery",                            sz:"1 bunch",  p:"$1.98", e:"🥬"},
-    {b:"Fresh",      n:"Romaine Lettuce",                   sz:"1 head",   p:"$1.98", e:"🥬"},
-    {b:"Dole",       n:"Dole Classic Iceberg Salad Kit",    sz:"12 oz",    p:"$2.48", e:"🥗"},
-    {b:"Fresh Express",n:"Fresh Express Caesar Chopped Kit",sz:"10.3 oz", p:"$3.48", e:"🥗"},
-    {b:"Fresh",      n:"Garlic Head",                       sz:"1 ct",     p:"$0.68", e:"🧄"},
-    {b:"Fresh",      n:"Mushrooms White",                   sz:"8 oz",     p:"$2.48", e:"🍄"},
-    {b:"Fresh",      n:"Zucchini",                          sz:"per lb",   p:"$0.98/lb",e:"🥒"},
-    {b:"Fresh",      n:"Green Beans",                       sz:"per lb",   p:"$1.98/lb",e:"🫘"},
-    {b:"Fresh",      n:"Spinach",                           sz:"5 oz",     p:"$2.98", e:"🥬"},
-    {b:"Fresh",      n:"Cilantro",                          sz:"1 bunch",  p:"$0.68", e:"🌿"},
+  '490800':[
   ],
-  fruit:[
-    {b:"Fresh",      n:"Bananas",                           sz:"per lb",   p:"$0.28/lb",e:"🍌"},
-    {b:"Fresh",      n:"Gala Apples Bag",                   sz:"3 lb bag", p:"$3.98", e:"🍎"},
-    {b:"Fresh",      n:"Fuji Apples Bag",                   sz:"3 lb bag", p:"$3.98", e:"🍎"},
-    {b:"Fresh",      n:"Granny Smith Apples",               sz:"3 lb bag", p:"$3.98", e:"🍏"},
-    {b:"Fresh",      n:"Honeycrisp Apples",                 sz:"3 lb bag", p:"$6.98", e:"🍎"},
-    {b:"Fresh",      n:"Red Seedless Grapes",               sz:"per lb",   p:"$1.98/lb",e:"🍇"},
-    {b:"Fresh",      n:"Green Seedless Grapes",             sz:"per lb",   p:"$1.98/lb",e:"🍇"},
-    {b:"Fresh",      n:"Strawberries",                      sz:"1 lb pkg", p:"$3.48", e:"🍓"},
-    {b:"Fresh",      n:"Blueberries",                       sz:"1 pint",   p:"$3.98", e:"🫐"},
-    {b:"Fresh",      n:"Cuties Clementines",                sz:"3 lb bag", p:"$5.98", e:"🍊"},
-    {b:"Fresh",      n:"Navel Oranges",                     sz:"4 lb bag", p:"$4.98", e:"🍊"},
-    {b:"Fresh",      n:"Seedless Watermelon Whole",         sz:"avg 16 lb",p:"$5.98", e:"🍉"},
-    {b:"Fresh",      n:"Watermelon Sliced",                 sz:"per lb",   p:"$0.68/lb",e:"🍉"},
-    {b:"Fresh",      n:"Pineapple Whole",                   sz:"1 ct",     p:"$2.48", e:"🍍"},
-    {b:"Fresh",      n:"Mango Ataulfo",                     sz:"1 ct",     p:"$0.88", e:"🥭"},
-    {b:"Fresh",      n:"Peaches",                           sz:"per lb",   p:"$1.98/lb",e:"🍑"},
-    {b:"Fresh",      n:"Limes",                             sz:"1 lb bag", p:"$0.98", e:"🟢"},
-    {b:"Fresh",      n:"Lemons",                            sz:"2 lb bag", p:"$2.48", e:"🍋"},
-    {b:"Fresh",      n:"Raspberries",                       sz:"6 oz",     p:"$3.48", e:"🍇"},
-    {b:"Fresh",      n:"Blackberries",                      sz:"6 oz",     p:"$3.48", e:"🫐"},
-    {b:"Fresh",      n:"Cherries",                          sz:"per lb",   p:"$3.98/lb",e:"🍒"},
-    {b:"Dole",       n:"Dole Pineapple Chunks",             sz:"20 oz",    p:"$1.98", e:"🍍"},
+  '490801':[
   ],
-  drinks:[
-    {b:"Coca-Cola",  n:"Coca-Cola 12pk Cans",               sz:"12 x 12oz",p:"$7.98", e:"🥤"},
-    {b:"Coca-Cola",  n:"Coca-Cola 2L Bottle",               sz:"2 liter",  p:"$2.28", e:"🥤"},
-    {b:"Coca-Cola",  n:"Diet Coke 12pk Cans",               sz:"12 x 12oz",p:"$7.98", e:"🥤"},
-    {b:"Coca-Cola",  n:"Sprite 12pk Cans",                  sz:"12 x 12oz",p:"$7.98", e:"🥤"},
-    {b:"Coca-Cola",  n:"Sprite 2L Bottle",                  sz:"2 liter",  p:"$2.28", e:"🥤"},
-    {b:"Dr Pepper",  n:"Dr Pepper 12pk Cans",               sz:"12 x 12oz",p:"$7.98", e:"🥤"},
-    {b:"Dr Pepper",  n:"Dr Pepper 2L Bottle",               sz:"2 liter",  p:"$2.28", e:"🥤"},
-    {b:"Dr Pepper",  n:"Diet Dr Pepper 12pk",               sz:"12 x 12oz",p:"$7.98", e:"🥤"},
-    {b:"Pepsi",      n:"Pepsi 12pk Cans",                   sz:"12 x 12oz",p:"$7.98", e:"🥤"},
-    {b:"Pepsi",      n:"Mountain Dew 12pk Cans",            sz:"12 x 12oz",p:"$7.98", e:"🟢"},
-    {b:"Pepsi",      n:"Starry 12pk Cans",                  sz:"12 x 12oz",p:"$7.98", e:"🥤"},
-    {b:"Gatorade",   n:"Gatorade Fruit Punch",              sz:"32 fl oz", p:"$1.98", e:"⚡"},
-    {b:"Gatorade",   n:"Gatorade Cool Blue",                sz:"32 fl oz", p:"$1.98", e:"⚡"},
-    {b:"Gatorade",   n:"Gatorade Lemon Lime",               sz:"32 fl oz", p:"$1.98", e:"⚡"},
-    {b:"Powerade",   n:"Powerade Mountain Berry Blast",     sz:"32 fl oz", p:"$1.48", e:"⚡"},
-    {b:"Body Armor", n:"Body Armor Lyte Peach Mango",       sz:"28 fl oz", p:"$2.48", e:"⚡"},
-    {b:"Monster",    n:"Monster Energy Original",           sz:"16 fl oz", p:"$2.98", e:"⚡"},
-    {b:"Red Bull",   n:"Red Bull Original",                 sz:"8.4 fl oz",p:"$2.98", e:"⚡"},
+  '490802':[
   ],
-  water:[
-    {b:"Topo Chico", n:"Topo Chico Mineral Water",          sz:"12 x 11.5oz",p:"$6.98",e:"💧"},
-    {b:"Topo Chico", n:"Topo Chico Mineral Water Single",   sz:"11.5 fl oz",p:"$0.98", e:"💧"},
-    {b:"La Croix",   n:"La Croix Sparkling Water Variety",  sz:"12 x 12oz",p:"$5.98", e:"💧"},
-    {b:"La Croix",   n:"La Croix Lime",                     sz:"12 x 12oz",p:"$5.98", e:"🍋"},
-    {b:"Dasani",     n:"Dasani Water 24pk",                  sz:"24 x 16.9oz",p:"$4.48",e:"💧"},
-    {b:"Aquafina",   n:"Aquafina Water 24pk",               sz:"24 x 16.9oz",p:"$4.48",e:"💧"},
-    {b:"Ozarka",     n:"Ozarka Natural Spring Water 24pk",  sz:"24 x 16.9oz",p:"$3.98",e:"💧"},
-    {b:"H-E-B",      n:"H-E-B Purified Water 40pk",        sz:"40 x 16.9oz",p:"$3.98",e:"💧"},
-    {b:"Smartwater", n:"Smartwater 6pk",                    sz:"6 x 33.8oz",p:"$7.98", e:"💧"},
-    {b:"Bubly",      n:"Bubly Sparkling Water Lime",        sz:"12 x 12oz",p:"$5.48", e:"💧"},
-    {b:"Liquid IV",  n:"Liquid IV Hydration Multiplier",    sz:"16 ct",    p:"$24.98", e:"💧"},
+  '490803':[
   ],
-  juice:[
-    {b:"Tropicana",  n:"Tropicana Pure Premium Orange Juice",sz:"52 fl oz",p:"$4.48", e:"🍊"},
-    {b:"Tropicana",  n:"Tropicana Original No Pulp",        sz:"52 fl oz", p:"$4.48", e:"🍊"},
-    {b:"Simply",     n:"Simply Orange Original",            sz:"52 fl oz", p:"$4.98", e:"🍊"},
-    {b:"Simply",     n:"Simply Lemonade",                   sz:"52 fl oz", p:"$3.98", e:"🍋"},
-    {b:"Simply",     n:"Simply Apple",                      sz:"52 fl oz", p:"$3.98", e:"🍎"},
-    {b:"Minute Maid",n:"Minute Maid Premium Orange Juice",  sz:"59 fl oz", p:"$3.98", e:"🍊"},
-    {b:"Minute Maid",n:"Minute Maid Lemonade",              sz:"59 fl oz", p:"$3.48", e:"🍋"},
-    {b:"Capri Sun",  n:"Capri Sun Fruit Punch 10pk",        sz:"10 x 6oz", p:"$3.48", e:"🧃"},
-    {b:"Capri Sun",  n:"Capri Sun Wild Cherry 10pk",        sz:"10 x 6oz", p:"$3.48", e:"🧃"},
-    {b:"Capri Sun",  n:"Capri Sun Pacific Cooler 10pk",     sz:"10 x 6oz", p:"$3.48", e:"🧃"},
-    {b:"Kool-Aid",   n:"Kool-Aid Jammers Tropical Punch",   sz:"10 x 6oz", p:"$2.98", e:"🧃"},
-    {b:"Mott's",     n:"Mott's 100% Apple Juice",           sz:"64 fl oz", p:"$3.48", e:"🍎"},
-    {b:"Welch's",    n:"Welch's 100% Grape Juice",          sz:"64 fl oz", p:"$4.48", e:"🍇"},
-    {b:"V8",         n:"V8 Original 100% Vegetable Juice",  sz:"46 fl oz", p:"$3.98", e:"🍅"},
+  '490804':[
   ],
-  coffee:[
-    {b:"Folgers",    n:"Folgers Classic Roast Ground Coffee",sz:"30.5 oz", p:"$8.98", e:"☕"},
-    {b:"Folgers",    n:"Folgers Classic Roast K-Cups",      sz:"32 ct",    p:"$17.98", e:"☕"},
-    {b:"Maxwell House",n:"Maxwell House Original Roast",   sz:"30.6 oz",  p:"$8.48", e:"☕"},
-    {b:"Starbucks",  n:"Starbucks Pike Place Ground Coffee",sz:"12 oz",   p:"$8.98", e:"☕"},
-    {b:"Starbucks",  n:"Starbucks Pike Place K-Cups",       sz:"22 ct",    p:"$16.98", e:"☕"},
-    {b:"Starbucks",  n:"Starbucks Caramel Frappuccino",     sz:"4 x 9.5oz",p:"$6.98", e:"☕"},
-    {b:"Dunkin'",    n:"Dunkin' Original Blend K-Cups",     sz:"22 ct",    p:"$11.98", e:"☕"},
-    {b:"H-E-B",      n:"H-E-B Cafe Ole Donut Shop Blend",  sz:"12 oz",    p:"$6.98", e:"☕"},
-    {b:"H-E-B",      n:"H-E-B Cafe Ole Texas Pecan K-Cups",sz:"18 ct",   p:"$9.98", e:"☕"},
-    {b:"Lipton",     n:"Lipton Tea Bags",                   sz:"100 ct",   p:"$3.98", e:"🍵"},
-    {b:"Bigelow",    n:"Bigelow Classic Green Tea",         sz:"40 ct",    p:"$4.98", e:"🍵"},
-    {b:"Arizona",    n:"Arizona Green Tea 23oz Can",        sz:"23 fl oz", p:"$0.99", e:"🍵"},
-    {b:"Gold Peak",  n:"Gold Peak Sweet Tea",               sz:"52 fl oz", p:"$2.98", e:"🍵"},
+  '490300':[
   ],
-  pasta:[
-    {b:"Barilla",    n:"Barilla Spaghetti",                 sz:"16 oz",    p:"$1.48", e:"🍝"},
-    {b:"Barilla",    n:"Barilla Penne",                     sz:"16 oz",    p:"$1.48", e:"🍝"},
-    {b:"Barilla",    n:"Barilla Rotini",                    sz:"16 oz",    p:"$1.48", e:"🍝"},
-    {b:"Barilla",    n:"Barilla Linguine",                  sz:"16 oz",    p:"$1.48", e:"🍝"},
-    {b:"Barilla",    n:"Barilla Angel Hair",                sz:"16 oz",    p:"$1.48", e:"🍝"},
-    {b:"Barilla",    n:"Barilla Elbows",                    sz:"16 oz",    p:"$1.48", e:"🍝"},
-    {b:"Prego",      n:"Prego Traditional Pasta Sauce",     sz:"24 oz",    p:"$2.48", e:"🍅"},
-    {b:"Prego",      n:"Prego Meat Sauce",                  sz:"24 oz",    p:"$2.98", e:"🍅"},
-    {b:"Ragú",       n:"Ragú Old World Style Traditional",  sz:"24 oz",    p:"$2.48", e:"🍅"},
-    {b:"Ragú",       n:"Ragú Chunky Tomato Garlic Onion",   sz:"24 oz",    p:"$2.48", e:"🍅"},
-    {b:"Classico",   n:"Classico Marinara",                 sz:"24 oz",    p:"$2.98", e:"🍅"},
-    {b:"Rao's",      n:"Rao's Homemade Marinara",           sz:"24 oz",    p:"$8.98", e:"🍅"},
-    {b:"Kraft",      n:"Kraft Original Mac & Cheese",       sz:"7.25 oz",  p:"$0.98", e:"🧀"},
-    {b:"Kraft",      n:"Kraft Deluxe Mac & Cheese",         sz:"14 oz",    p:"$2.98", e:"🧀"},
-    {b:"Annie's",    n:"Annie's White Cheddar Mac & Cheese",sz:"6 oz",    p:"$1.98", e:"🧀"},
+  '490301':[
   ],
-  canned:[
-    {b:"Campbell's", n:"Campbell's Tomato Soup",            sz:"10.75 oz", p:"$1.28", e:"🍅"},
-    {b:"Campbell's", n:"Campbell's Chicken Noodle Soup",    sz:"10.75 oz", p:"$1.28", e:"🍲"},
-    {b:"Campbell's", n:"Campbell's Cream of Mushroom",      sz:"10.75 oz", p:"$1.28", e:"🍄"},
-    {b:"Progresso",  n:"Progresso Rich & Hearty Chicken Noodle",sz:"19 oz",p:"$2.48",e:"🍲"},
-    {b:"Rotel",      n:"Rotel Original Diced Tomatoes & Green Chilies",sz:"10 oz",p:"$0.98",e:"🍅"},
-    {b:"Hunt's",     n:"Hunt's Diced Tomatoes",             sz:"14.5 oz",  p:"$0.98", e:"🍅"},
-    {b:"Hunt's",     n:"Hunt's Tomato Paste",               sz:"6 oz",     p:"$0.78", e:"🍅"},
-    {b:"Del Monte",  n:"Del Monte Sweet Whole Kernel Corn", sz:"15.25 oz", p:"$0.88", e:"🌽"},
-    {b:"Del Monte",  n:"Del Monte French Style Green Beans",sz:"14.5 oz", p:"$0.88", e:"🫘"},
-    {b:"H-E-B",      n:"H-E-B Black Beans",                 sz:"15 oz",    p:"$0.88", e:"🫘"},
-    {b:"H-E-B",      n:"H-E-B Pinto Beans",                 sz:"15 oz",    p:"$0.88", e:"🫘"},
-    {b:"Old El Paso",n:"Old El Paso Refried Beans",         sz:"16 oz",    p:"$1.28", e:"🫘"},
-    {b:"StarKist",   n:"StarKist Chunk Light Tuna in Water", sz:"5 oz",    p:"$0.98", e:"🐟"},
-    {b:"Swanson",    n:"Swanson Chicken Broth",             sz:"32 oz",    p:"$2.48", e:"🫙"},
-    {b:"Dole",       n:"Dole Pineapple Chunks in Juice",    sz:"20 oz",    p:"$1.98", e:"🍍"},
+  '490302':[
   ],
-  rice:[
-    {b:"H-E-B",      n:"H-E-B Long Grain White Rice",       sz:"5 lb bag", p:"$3.98", e:"🍚"},
-    {b:"Mahatma",    n:"Mahatma Long Grain White Rice",      sz:"5 lb bag", p:"$3.98", e:"🍚"},
-    {b:"Uncle Ben's",n:"Ben's Original White Rice",         sz:"2 lb bag", p:"$2.98", e:"🍚"},
-    {b:"Uncle Ben's",n:"Ben's Original Ready Rice",         sz:"8.5 oz",   p:"$1.98", e:"🍚"},
-    {b:"Mahatma",    n:"Mahatma Jasmine Rice",               sz:"5 lb bag", p:"$5.98", e:"🍚"},
-    {b:"Zatarain's", n:"Zatarain's Yellow Rice",             sz:"6.9 oz",   p:"$1.98", e:"🍚"},
-    {b:"Zatarain's", n:"Zatarain's Dirty Rice Mix",          sz:"8 oz",     p:"$1.98", e:"🍚"},
-    {b:"H-E-B",      n:"H-E-B Pinto Beans Dry",             sz:"2 lb bag", p:"$2.48", e:"🫘"},
-    {b:"H-E-B",      n:"H-E-B Black Beans Dry",             sz:"1 lb bag", p:"$1.48", e:"🫘"},
-    {b:"Goya",       n:"Goya Yellow Rice",                   sz:"7 oz",     p:"$1.48", e:"🍚"},
-    {b:"Goya",       n:"Goya Black Beans Dry",               sz:"1 lb bag", p:"$1.98", e:"🫘"},
-    {b:"Quaker",     n:"Quaker Grits Original",              sz:"24 oz",    p:"$3.48", e:"🍚"},
-    {b:"Idahoan",    n:"Idahoan Original Mashed Potatoes",   sz:"4 oz",     p:"$1.48", e:"🥔"},
+  '490303':[
   ],
-  condiments:[
-    {b:"Heinz",      n:"Heinz Tomato Ketchup",               sz:"32 oz",    p:"$3.98", e:"🍅"},
-    {b:"Heinz",      n:"Heinz Yellow Mustard",               sz:"20 oz",    p:"$2.48", e:"🌭"},
-    {b:"French's",   n:"French's Classic Yellow Mustard",   sz:"20 oz",    p:"$2.48", e:"🌭"},
-    {b:"Hellmann's", n:"Hellmann's Real Mayonnaise",         sz:"30 oz",    p:"$5.48", e:"🫙"},
-    {b:"Miracle Whip",n:"Miracle Whip Dressing",            sz:"30 oz",    p:"$4.98", e:"🫙"},
-    {b:"Hidden Valley",n:"Hidden Valley Ranch Original",    sz:"16 fl oz", p:"$3.98", e:"🥗"},
-    {b:"Hidden Valley",n:"Hidden Valley Ranch 2pk",         sz:"2 x 16oz", p:"$6.98", e:"🥗"},
-    {b:"Tabasco",    n:"Tabasco Original Red Pepper Sauce",  sz:"12 oz",    p:"$3.48", e:"🌶️"},
-    {b:"Cholula",    n:"Cholula Original Hot Sauce",         sz:"12 oz",    p:"$3.48", e:"🌶️"},
-    {b:"Valentina",  n:"Valentina Salsa Picante",            sz:"34 oz",    p:"$2.48", e:"🌶️"},
-    {b:"H-E-B",      n:"H-E-B Fresh Salsa Medium",          sz:"16 oz",    p:"$3.48", e:"🍅"},
-    {b:"H-E-B",      n:"H-E-B Fresh Salsa Mild",            sz:"16 oz",    p:"$3.48", e:"🍅"},
-    {b:"Pace",       n:"Pace Chunky Salsa Medium",           sz:"24 oz",    p:"$3.48", e:"🍅"},
-    {b:"Stubb's",    n:"Stubb's Original BBQ Sauce",         sz:"18 oz",    p:"$3.48", e:"🍖"},
-    {b:"Sweet Baby Ray's",n:"Sweet Baby Ray's Original BBQ",sz:"28 oz",   p:"$2.98", e:"🍖"},
-    {b:"Worcestershire",n:"Lea & Perrins Worcestershire",   sz:"10 oz",    p:"$3.48", e:"🫙"},
-    {b:"Soy Sauce",  n:"Kikkoman Soy Sauce",                 sz:"10 fl oz", p:"$2.48", e:"🫙"},
+  '490304':[
   ],
-  spices:[
-    {b:"Morton",     n:"Morton Iodized Salt",                sz:"26 oz",    p:"$1.28", e:"🧂"},
-    {b:"McCormick",  n:"McCormick Black Pepper Ground",      sz:"3 oz",     p:"$3.98", e:"🧂"},
-    {b:"McCormick",  n:"McCormick Garlic Powder",            sz:"3.12 oz",  p:"$3.98", e:"🧄"},
-    {b:"McCormick",  n:"McCormick Onion Powder",             sz:"2.62 oz",  p:"$3.98", e:"🧅"},
-    {b:"McCormick",  n:"McCormick Cumin Ground",             sz:"1.5 oz",   p:"$3.98", e:"🌿"},
-    {b:"McCormick",  n:"McCormick Chili Powder",             sz:"2.5 oz",   p:"$3.98", e:"🌶️"},
-    {b:"McCormick",  n:"McCormick Paprika",                  sz:"2.12 oz",  p:"$3.98", e:"🌶️"},
-    {b:"McCormick",  n:"McCormick Italian Seasoning",        sz:"0.75 oz",  p:"$2.98", e:"🌿"},
-    {b:"McCormick",  n:"McCormick Fajita Seasoning",         sz:"1.27 oz",  p:"$1.48", e:"🌮"},
-    {b:"McCormick",  n:"McCormick Taco Seasoning",           sz:"1 oz",     p:"$1.48", e:"🌮"},
-    {b:"H-E-B",      n:"H-E-B Texas Spice Blend",           sz:"3 oz",     p:"$2.48", e:"🌶️"},
-    {b:"Domino",     n:"Domino Granulated White Sugar",      sz:"4 lb",     p:"$3.48", e:"🍬"},
-    {b:"Gold Medal", n:"Gold Medal All-Purpose Flour",       sz:"5 lb",     p:"$3.98", e:"🫙"},
-    {b:"Arm & Hammer",n:"Arm & Hammer Baking Soda",         sz:"1 lb",     p:"$0.98", e:"🫙"},
-    {b:"Clabber Girl",n:"Clabber Girl Baking Powder",        sz:"8.1 oz",   p:"$2.48", e:"🫙"},
-    {b:"Vanilla",    n:"McCormick Pure Vanilla Extract",     sz:"1 fl oz",  p:"$5.48", e:"🍶"},
+  '490305':[
   ],
-  oils:[
-    {b:"Crisco",     n:"Crisco Pure Vegetable Oil",          sz:"48 fl oz", p:"$4.98", e:"🫙"},
-    {b:"Wesson",     n:"Wesson Canola Oil",                  sz:"48 fl oz", p:"$4.98", e:"🫙"},
-    {b:"Pompeian",   n:"Pompeian Extra Virgin Olive Oil",    sz:"32 fl oz", p:"$8.98", e:"🫒"},
-    {b:"Pompeian",   n:"Pompeian Smooth EVOO",               sz:"16 fl oz", p:"$5.98", e:"🫒"},
-    {b:"H-E-B",      n:"H-E-B Pure Olive Oil",               sz:"17 fl oz", p:"$5.98", e:"🫒"},
-    {b:"PAM",        n:"PAM Original Cooking Spray",         sz:"8 oz",     p:"$2.98", e:"🫙"},
-    {b:"PAM",        n:"PAM Butter Cooking Spray",           sz:"8 oz",     p:"$2.98", e:"🧈"},
-    {b:"Heinz",      n:"Heinz Distilled White Vinegar",      sz:"32 fl oz", p:"$2.48", e:"🫙"},
-    {b:"Bragg",      n:"Bragg Apple Cider Vinegar",          sz:"32 fl oz", p:"$5.98", e:"🍎"},
+  '490306':[
   ],
-  snackbars:[
-    {b:"KIND",       n:"KIND Dark Chocolate Nuts & Sea Salt",sz:"6 ct",    p:"$5.98", e:"🍫"},
-    {b:"KIND",       n:"KIND Caramel Almond & Sea Salt",     sz:"6 ct",    p:"$5.98", e:"🍫"},
-    {b:"Clif Bar",   n:"Clif Bar Chocolate Chip",            sz:"6 ct",    p:"$6.48", e:"🍫"},
-    {b:"Clif Bar",   n:"Clif Bar Crunchy Peanut Butter",     sz:"6 ct",    p:"$6.48", e:"🥜"},
-    {b:"Nature Valley",n:"Nature Valley Sweet & Salty Almond",sz:"6 ct",  p:"$3.98", e:"🌾"},
-    {b:"Nature Valley",n:"Nature Valley Crunchy Oats & Honey",sz:"6 ct",  p:"$3.48", e:"🍯"},
-    {b:"Quaker",     n:"Quaker Chewy Chocolate Chip Granola",sz:"8 ct",   p:"$2.98", e:"🍫"},
-    {b:"Larabar",    n:"Larabar Apple Pie Bar",               sz:"5 ct",   p:"$5.98", e:"🍎"},
-    {b:"RXBar",      n:"RXBAR Chocolate Sea Salt",            sz:"12 ct",  p:"$17.98", e:"🍫"},
-    {b:"Nutri-Grain",n:"Nutri-Grain Strawberry",             sz:"8 ct",    p:"$3.48", e:"🍓"},
-    {b:"Nutri-Grain",n:"Nutri-Grain Blueberry",              sz:"8 ct",    p:"$3.48", e:"🫐"},
-    {b:"Fiber One",  n:"Fiber One Chocolate Fudge Brownies", sz:"6 ct",   p:"$4.48", e:"🍫"},
-    {b:"Special K",  n:"Special K Protein Bars Chocolate",   sz:"6 ct",   p:"$5.48", e:"🍫"},
+  '490400':[
   ],
-  nuts:[
-    {b:"Planters",   n:"Planters Dry Roasted Peanuts",       sz:"16 oz",   p:"$3.98", e:"🥜"},
-    {b:"Planters",   n:"Planters Salted Mixed Nuts",         sz:"10.3 oz", p:"$6.98", e:"🥜"},
-    {b:"Planters",   n:"Planters Cashews",                   sz:"8.5 oz",  p:"$5.98", e:"🥜"},
-    {b:"Blue Diamond",n:"Blue Diamond Almonds Original",    sz:"6 oz",    p:"$4.48", e:"🌰"},
-    {b:"Blue Diamond",n:"Blue Diamond Almonds Bold Wasabi", sz:"6 oz",    p:"$4.48", e:"🌰"},
-    {b:"Wonderful",  n:"Wonderful Pistachios No Salt",       sz:"6 oz",    p:"$4.98", e:"🌿"},
-    {b:"Fisher",     n:"Fisher Honey Roasted Peanuts",       sz:"10 oz",   p:"$3.98", e:"🥜"},
-    {b:"Sun-Maid",   n:"Sun-Maid California Raisins",        sz:"12 oz",   p:"$3.48", e:"🍇"},
-    {b:"H-E-B",      n:"H-E-B Trail Mix Classic",           sz:"14 oz",   p:"$4.98", e:"🥜"},
-    {b:"H-E-B",      n:"H-E-B Roasted Cashews",             sz:"8 oz",    p:"$4.98", e:"🥜"},
-    {b:"Jif",        n:"Jif Creamy Peanut Butter",           sz:"16 oz",   p:"$3.48", e:"🥜"},
-    {b:"Jif",        n:"Jif Crunchy Peanut Butter",          sz:"16 oz",   p:"$3.48", e:"🥜"},
-    {b:"Skippy",     n:"Skippy Creamy Peanut Butter",        sz:"16.3 oz", p:"$3.48", e:"🥜"},
+  '490401':[
   ],
-  lunchmeat:[
-    {b:"Lunchables", n:"Lunchables Pepperoni Pizza",         sz:"4.2 oz",  p:"$2.48", e:"📦"},
-    {b:"Lunchables", n:"Lunchables Ham & Cheddar",           sz:"3.5 oz",  p:"$2.48", e:"📦"},
-    {b:"Lunchables", n:"Lunchables Turkey & Cheddar",        sz:"3.5 oz",  p:"$2.48", e:"📦"},
-    {b:"Lunchables", n:"Lunchables Nachos Cheese Dip",       sz:"4.4 oz",  p:"$2.48", e:"📦"},
-    {b:"Lunchables", n:"Lunchables Pizza Extra Cheesy",      sz:"4.2 oz",  p:"$2.48", e:"📦"},
-    {b:"H-E-B",      n:"H-E-B Go-Pack Turkey String Cheese",sz:"6 ct",    p:"$3.48", e:"🧀"},
-    {b:"Babybel",    n:"Mini Babybel Original Cheese",       sz:"6 ct",    p:"$4.98", e:"🧀"},
-    {b:"Yoplait",    n:"Gogurt Strawberry Watermelon",       sz:"8 ct",    p:"$3.98", e:"🍓"},
-    {b:"Mott's",     n:"Mott's Applesauce Original Pouches", sz:"4 ct",    p:"$2.98", e:"🍎"},
-    {b:"Annie's",    n:"Annie's Cheddar Bunny Crackers",     sz:"7.5 oz",  p:"$3.98", e:"🐰"},
-    {b:"General Mills",n:"Fruit Roll-Ups Strawberry",        sz:"10 ct",   p:"$3.98", e:"🍓"},
-    {b:"Welch's",    n:"Welch's Fruit Snacks Mixed Fruit",   sz:"10 ct",   p:"$2.98", e:"🍬"},
-    {b:"Keebler",    n:"Keebler Vanilla Wafers",             sz:"12 oz",   p:"$2.98", e:"🍪"},
+  '490500':[
   ],
-  household:[
-    {b:"Charmin",    n:"Charmin Ultra Soft 12 Mega Rolls",   sz:"12 rolls",p:"$16.98",e:"🧻"},
-    {b:"Charmin",    n:"Charmin Ultra Strong 12 Mega Rolls", sz:"12 rolls",p:"$16.98",e:"🧻"},
-    {b:"Angel Soft", n:"Angel Soft 12 Double Rolls",         sz:"12 rolls",p:"$8.98", e:"🧻"},
-    {b:"Bounty",     n:"Bounty Select-A-Size 8 Rolls",       sz:"8 rolls", p:"$14.98",e:"🧻"},
-    {b:"Brawny",     n:"Brawny Pick-A-Size 6 Rolls",         sz:"6 rolls", p:"$8.98", e:"🧻"},
-    {b:"Puffs",      n:"Puffs Plus Lotion Facial Tissue",    sz:"3 pk",    p:"$4.98", e:"🧻"},
-    {b:"Ziploc",     n:"Ziploc Gallon Freezer Bags",         sz:"30 ct",   p:"$4.98", e:"🛍️"},
-    {b:"Ziploc",     n:"Ziploc Quart Storage Bags",          sz:"48 ct",   p:"$4.48", e:"🛍️"},
-    {b:"Ziploc",     n:"Ziploc Sandwich Bags",               sz:"90 ct",   p:"$3.48", e:"🛍️"},
-    {b:"Reynolds",   n:"Reynolds Wrap Aluminum Foil",        sz:"75 sq ft",p:"$3.98", e:"🪘"},
-    {b:"Hefty",      n:"Hefty Ultra Strong 13 Gal Trash Bags",sz:"40 ct", p:"$8.98", e:"🗑️"},
-    {b:"Glad",       n:"Glad ForceFlex 13 Gal Trash Bags",   sz:"40 ct",   p:"$9.98", e:"🗑️"},
-    {b:"Dawn",       n:"Dawn Original Dish Soap",            sz:"19.4 oz", p:"$2.98", e:"🫧"},
-    {b:"Dawn",       n:"Dawn Platinum Dish Soap",            sz:"16.2 oz", p:"$3.98", e:"🫧"},
-    {b:"Cascade",    n:"Cascade Platinum Dishwasher Pods",   sz:"36 ct",   p:"$12.98",e:"🫧"},
-    {b:"Lysol",      n:"Lysol All-Purpose Cleaner",          sz:"32 oz",   p:"$3.98", e:"🧹"},
-    {b:"Fabuloso",   n:"Fabuloso Multi-Purpose Cleaner Lavender",sz:"56 oz",p:"$2.98",e:"🧹"},
-    {b:"Clorox",     n:"Clorox Bleach Regular",              sz:"81 oz",   p:"$4.48", e:"🧹"},
-    {b:"Mr. Clean",  n:"Mr. Clean Magic Eraser Original",    sz:"4 ct",    p:"$4.48", e:"🧹"},
-    {b:"Swiffer",    n:"Swiffer Sweeper Wet Refills",        sz:"24 ct",   p:"$9.98", e:"🧹"},
+  '490501':[
   ],
-  laundry:[
-    {b:"Tide",       n:"Tide Original Liquid Detergent",     sz:"92 fl oz",p:"$14.98",e:"🧺"},
-    {b:"Tide",       n:"Tide Pods Original 42 ct",           sz:"42 ct",   p:"$14.98",e:"🧺"},
-    {b:"Tide",       n:"Tide Free & Gentle",                 sz:"92 fl oz",p:"$14.98",e:"🧺"},
-    {b:"Arm & Hammer",n:"Arm & Hammer Clean Burst Detergent",sz:"75 fl oz",p:"$6.98",e:"🧺"},
-    {b:"Gain",       n:"Gain Original Liquid Detergent",     sz:"75 fl oz",p:"$8.98", e:"🧺"},
-    {b:"All",        n:"All Free Clear Detergent",           sz:"88 fl oz",p:"$9.98", e:"🧺"},
-    {b:"Downy",      n:"Downy Original Fabric Softener",     sz:"60 fl oz",p:"$6.98", e:"🧺"},
-    {b:"Bounce",     n:"Bounce Outdoor Fresh Dryer Sheets",  sz:"120 ct",  p:"$7.98", e:"🧺"},
-    {b:"Shout",      n:"Shout Advanced Stain Remover Spray", sz:"22 oz",   p:"$3.98", e:"🧺"},
-    {b:"OxiClean",   n:"OxiClean White Revive Powder",       sz:"3 lb",    p:"$7.98", e:"🧺"},
+  '490502':[
   ],
-  soap:[
-    {b:"Dove",       n:"Dove Beauty Bar Original",           sz:"4 ct",    p:"$3.98", e:"🧼"},
-    {b:"Dove",       n:"Dove Men+Care Body Wash",            sz:"18 fl oz",p:"$5.98", e:"🧴"},
-    {b:"Dove",       n:"Dove Deep Moisture Body Wash",       sz:"22 fl oz",p:"$5.98", e:"🧴"},
-    {b:"Irish Spring",n:"Irish Spring Original Bar Soap",    sz:"6 ct",    p:"$5.98", e:"🧼"},
-    {b:"Dial",       n:"Dial Antibacterial Bar Soap",        sz:"6 ct",    p:"$4.98", e:"🧼"},
-    {b:"Softsoap",   n:"Softsoap Aquarium Hand Soap",        sz:"11.25 oz",p:"$2.98", e:"🫧"},
-    {b:"Method",     n:"Method Foaming Hand Soap Sweet Water",sz:"10 oz",  p:"$3.98", e:"🫧"},
-    {b:"Old Spice",  n:"Old Spice Original Body Wash",       sz:"16 fl oz",p:"$4.98", e:"🧴"},
-    {b:"AXE",        n:"AXE Phoenix Body Wash",              sz:"16 fl oz",p:"$4.98", e:"🧴"},
-    {b:"Suave",      n:"Suave Essentials Coconut Body Wash", sz:"15 fl oz",p:"$2.48", e:"🧴"},
-    {b:"Cetaphil",   n:"Cetaphil Gentle Skin Cleanser",      sz:"16 fl oz",p:"$8.98", e:"🧴"},
-    {b:"Lubriderm",  n:"Lubriderm Daily Moisture Lotion",    sz:"16 fl oz",p:"$5.98", e:"🧴"},
-    {b:"Vaseline",   n:"Vaseline Intensive Care Body Lotion",sz:"20.3 oz", p:"$5.98", e:"🧴"},
-    {b:"Banana Boat",n:"Banana Boat Sport SPF 50 Sunscreen", sz:"8 oz",    p:"$8.98", e:"☀️"},
-    {b:"Neutrogena",n:"Neutrogena Beach Defense SPF 70",     sz:"6.7 oz",  p:"$11.98",e:"☀️"},
+  '490503':[
   ],
-  haircare:[
-    {b:"Pantene",    n:"Pantene Pro-V Classic Clean Shampoo",sz:"25.4 oz", p:"$5.98", e:"💆"},
-    {b:"Pantene",    n:"Pantene Pro-V Classic Clean Conditioner",sz:"24 oz",p:"$5.98",e:"💆"},
-    {b:"Head & Shoulders",n:"Head & Shoulders Classic Clean Shampoo",sz:"23.7 oz",p:"$6.98",e:"💆"},
-    {b:"Dove",       n:"Dove Intense Repair Shampoo",        sz:"25.4 oz", p:"$5.98", e:"💆"},
-    {b:"Dove",       n:"Dove Intense Repair Conditioner",    sz:"26 oz",   p:"$5.98", e:"💆"},
-    {b:"TRESemmé",   n:"TRESemmé Moisture Rich Shampoo",     sz:"28 fl oz",p:"$4.98", e:"💆"},
-    {b:"TRESemmé",   n:"TRESemmé Moisture Rich Conditioner", sz:"28 fl oz",p:"$4.98", e:"💆"},
-    {b:"Suave",      n:"Suave Professionals Smoothing Shampoo",sz:"28 oz", p:"$3.98", e:"💆"},
-    {b:"Garnier",    n:"Garnier Fructis Sleek & Shine Shampoo",sz:"12.5 oz",p:"$4.48",e:"💆"},
-    {b:"L'Oréal",    n:"L'Oréal EverPure Moisture Shampoo", sz:"8.5 fl oz",p:"$6.98",e:"💆"},
-    {b:"OGX",        n:"OGX Coconut Milk Shampoo",           sz:"13 fl oz",p:"$6.98", e:"💆"},
-    {b:"H-E-B",      n:"H-E-B Kids Tear-Free Shampoo",       sz:"12 fl oz",p:"$3.48", e:"👶"},
+  '490010':[
   ],
-  oral:[
-    {b:"Colgate",    n:"Colgate Total SF Toothpaste",        sz:"5.1 oz",  p:"$4.48", e:"🪥"},
-    {b:"Colgate",    n:"Colgate Optic White Toothpaste",     sz:"3.2 oz",  p:"$3.98", e:"🪥"},
-    {b:"Crest",      n:"Crest 3D White Toothpaste",          sz:"5.2 oz",  p:"$4.98", e:"🪥"},
-    {b:"Crest",      n:"Crest Pro-Health Clean Mint",        sz:"5 oz",    p:"$3.98", e:"🪥"},
-    {b:"Sensodyne",  n:"Sensodyne Fresh Mint Toothpaste",    sz:"4 oz",    p:"$5.98", e:"🪥"},
-    {b:"Oral-B",     n:"Oral-B Soft Toothbrush 3pk",        sz:"3 ct",    p:"$5.98", e:"🪥"},
-    {b:"Colgate",    n:"Colgate Extra Soft Toothbrush 4pk",  sz:"4 ct",    p:"$4.98", e:"🪥"},
-    {b:"Listerine",  n:"Listerine Cool Mint Mouthwash",      sz:"33.8 oz", p:"$5.98", e:"🫧"},
-    {b:"ACT",        n:"ACT Anticavity Fluoride Rinse",      sz:"33.8 oz", p:"$5.98", e:"🫧"},
-    {b:"Oral-B",     n:"Oral-B Glide Pro-Health Floss",      sz:"40 m",    p:"$3.98", e:"🪥"},
-    {b:"H-E-B",      n:"H-E-B Kids Toothpaste Bubblegum",   sz:"4.2 oz",  p:"$2.98", e:"🪥"},
-    {b:"H-E-B",      n:"H-E-B Kids Toothbrush 3pk",         sz:"3 ct",    p:"$3.98", e:"🪥"},
+  '490011':[
   ],
-  medicine:[
-    {b:"Tylenol",    n:"Tylenol Extra Strength 500mg",       sz:"100 ct",  p:"$11.98",e:"💊"},
-    {b:"Advil",      n:"Advil Ibuprofen 200mg",              sz:"100 ct",  p:"$9.98", e:"💊"},
-    {b:"Motrin",     n:"Children's Motrin Ibuprofen",        sz:"4 fl oz", p:"$8.98", e:"💊"},
-    {b:"Benadryl",   n:"Benadryl Allergy Ultratabs",         sz:"100 ct",  p:"$8.98", e:"💊"},
-    {b:"Claritin",   n:"Claritin 24Hr Allergy Tablets",      sz:"45 ct",   p:"$22.98",e:"💊"},
-    {b:"Zyrtec",     n:"Zyrtec Allergy Tablets",             sz:"45 ct",   p:"$22.98",e:"💊"},
-    {b:"Pepto-Bismol",n:"Pepto-Bismol Original",            sz:"16 fl oz",p:"$7.98", e:"💊"},
-    {b:"Tums",       n:"Tums Ultra Strength Antacid",        sz:"72 ct",   p:"$5.98", e:"💊"},
-    {b:"NyQuil",     n:"NyQuil Cold & Flu Nighttime",        sz:"12 fl oz",p:"$9.98", e:"💊"},
-    {b:"DayQuil",    n:"DayQuil Cold & Flu Relief",          sz:"12 fl oz",p:"$9.98", e:"💊"},
-    {b:"Band-Aid",   n:"Band-Aid Variety Pack",              sz:"80 ct",   p:"$5.98", e:"🩹"},
-    {b:"Neosporin",  n:"Neosporin Original Ointment",        sz:"1 oz",    p:"$7.98", e:"🩹"},
-    {b:"H-E-B",      n:"H-E-B Children's Ibuprofen Dye-Free",sz:"4 fl oz",p:"$4.98", e:"💊"},
+  '490012':[
   ],
-  baby:[
-    {b:"Pampers",    n:"Pampers Swaddlers Size 1",           sz:"27 ct",   p:"$9.98", e:"🍼"},
-    {b:"Pampers",    n:"Pampers Swaddlers Size 2",           sz:"25 ct",   p:"$9.98", e:"🍼"},
-    {b:"Pampers",    n:"Pampers Swaddlers Size 3",           sz:"22 ct",   p:"$9.98", e:"🍼"},
-    {b:"Huggies",    n:"Huggies Little Snugglers Size 1",    sz:"24 ct",   p:"$9.98", e:"🍼"},
-    {b:"Huggies",    n:"Huggies Little Movers Size 3",       sz:"25 ct",   p:"$9.98", e:"🍼"},
-    {b:"Pampers",    n:"Pampers Sensitive Baby Wipes",       sz:"72 ct",   p:"$4.98", e:"🧻"},
-    {b:"Huggies",    n:"Huggies Natural Care Wipes",         sz:"64 ct",   p:"$3.98", e:"🧻"},
-    {b:"Gerber",     n:"Gerber 2nd Foods Apples",            sz:"2 x 4oz", p:"$1.28", e:"🥣"},
-    {b:"Gerber",     n:"Gerber Puffs Banana",                sz:"1.48 oz", p:"$2.98", e:"🥣"},
-    {b:"Enfamil",    n:"Enfamil NeuroPro Infant Formula",    sz:"20.7 oz", p:"$24.98",e:"🍼"},
-    {b:"Similac",    n:"Similac 360 Total Care",             sz:"30.8 oz", p:"$24.98",e:"🍼"},
-    {b:"H-E-B",      n:"H-E-B Baby Sensitive Wipes",        sz:"72 ct",   p:"$3.48", e:"🧻"},
+  '490013':[
   ],
-  petfood:[
-    {b:"Purina",     n:"Purina ONE SmartBlend Chicken & Rice Dog",sz:"8 lb",p:"$13.98",e:"🐾"},
-    {b:"Purina",     n:"Purina Dog Chow Complete Adult",     sz:"18.5 lb", p:"$14.98",e:"🐾"},
-    {b:"Pedigree",   n:"Pedigree Adult Dry Dog Food Chicken",sz:"14 lb",  p:"$12.98",e:"🐾"},
-    {b:"Iams",       n:"Iams ProActive Health Adult Chicken",sz:"15 lb",  p:"$19.98",e:"🐾"},
-    {b:"Purina",     n:"Purina Cat Chow Complete Adult",     sz:"6.3 lb",  p:"$8.98", e:"🐾"},
-    {b:"Purina",     n:"Purina Fancy Feast Grilled Salmon",  sz:"3 oz",    p:"$0.88", e:"🐾"},
-    {b:"Friskies",   n:"Friskies Party Mix Cat Treats",      sz:"6 oz",    p:"$3.48", e:"🐾"},
-    {b:"Milk-Bone",  n:"Milk-Bone Original Dog Biscuits",    sz:"10 oz",   p:"$3.48", e:"🐾"},
-    {b:"Greenies",   n:"Greenies Original Dog Treats Regular",sz:"12 oz", p:"$12.98",e:"🐾"},
-    {b:"H-E-B",      n:"H-E-B Hill Country Dog Food Chicken",sz:"14 lb",  p:"$9.98", e:"🐾"},
+  '490014':[
+  ],
+  '490015':[
+  ],
+  '490020':[
+  ],
+  '490021':[
+  ],
+  '490022':[
+  ],
+  '490030':[
+  ],
+  '490031':[
+  ],
+  '490032':[
+  ],
+  '490033':[
+  ],
+  '490034':[
+  ],
+  '490040':[
+  ],
+  '490041':[
+  ],
+  '490042':[
+  ],
+  '490050':[
+  ],
+  '490051':[
+  ],
+  '490052':[
+  ],
+  '490053':[
+  ],
+  '490060':[
+  ],
+  '490061':[
+  ],
+  '490070':[
+  ],
+  '490080':[
+  ],
+  '490081':[
+  ],
+  '490090':[
+  ],
+  '490091':[
+  ],
+  '490092':[
+  ],
+  '490150':[
+  ],
+  '490151':[
+  ],
+  '490152':[
+  ],
+  '490153':[
+  ],
+  '490154':[
+  ],
+  '490155':[
+  ],
+  '490160':[
+  ],
+  '490161':[
+  ],
+  '490170':[
+  ],
+  '490171':[
+  ],
+  '490172':[
+  ],
+  '490173':[
+  ],
+  '490180':[
+  ],
+  '490181':[
+  ],
+  '490190':[
+  ],
+  '490191':[
+  ],
+  '490200':[
+  ],
+  '490201':[
+  ],
+  '490202':[
+  ],
+  '490203':[
+  ],
+  '490210':[
+  ],
+  '490211':[
+  ],
+  '490212':[
+  ],
+  '490213':[
+  ],
+  '490220':[
+  ],
+  '490221':[
+  ],
+  '490222':[
   ],
 };
-
-// ── STATE ──────────────────────────────────────────────────────────
-let who=null, curCatId=null, activeBrand='All', picks={}, checked={};
-
-function load(){try{const d=JSON.parse(localStorage.getItem('heb-v5')||'{}');picks=d.p||{};checked=d.c||{};}catch(e){}}
-function save(){try{localStorage.setItem('heb-v5',JSON.stringify({p:picks,c:checked}));}catch(e){}}
-
-load();
-buildCatGrid();
-refreshBadge();
-
+const MEMBERS={mom:{n:'Mom',e:'👩'},dad:{n:'Dad',e:'👨'},rory:{n:'Rory',e:'🧒'},rowan:{n:'Rowan',e:'👦'}};
+let who=null,curCatId=null,activeBrand='All',picks={},checked={};
+function load(){try{const d=JSON.parse(localStorage.getItem('heb-v6')||'{}');picks=d.p||{};checked=d.c||{}}catch(e){}}
+function save(){try{localStorage.setItem('heb-v6',JSON.stringify({p:picks,c:checked}))}catch(e){}}
+load();buildCatGrid();refreshBadge();
 function buildCatGrid(){
   document.getElementById('cat-grid').innerHTML=CATS.map(c=>
-    `<div class="cat-card" onclick="openSheet('${c.id}')">
-      <span class="cat-em">${c.em}</span>
-      <div class="cat-nm">${c.nm}</div>
-    </div>`).join('');
+    `<div class="cat-card" onclick="openSheet('${c.id}')"><span class="cat-em">${c.em}</span><div class="cat-nm">${c.nm}</div><div class="cat-ct">${c.count} items</div></div>`
+  ).join('');
 }
-
 function show(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');}
 function navTo(t){
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
   if(t==='add'){document.getElementById('n-add').classList.add('on');show('s-cats');}
   else{document.getElementById('n-list').classList.add('on');renderList();show('s-list');}
 }
-function pickWho(id,em,nm){
-  who={id,em,nm};
-  document.querySelectorAll('.mem').forEach(c=>c.classList.remove('sel'));
-  document.getElementById('c-'+id).classList.add('sel');
-}
-function goCats(){
-  if(!who){alert('Tap your name first!');return;}
-  document.getElementById('cats-title').textContent='Hi '+who.nm+'! What do you want? '+who.em;
-  show('s-cats');
-}
-
-// ── SHEET ──────────────────────────────────────────────────────────
+function pickWho(id,em,nm){who={id,em,nm};document.querySelectorAll('.mem').forEach(c=>c.classList.remove('sel'));document.getElementById('c-'+id).classList.add('sel');}
+function goCats(){if(!who){alert('Tap your name first!');return;}document.getElementById('cats-title').textContent='Hi '+who.nm+'! What do you want? '+who.em;show('s-cats');}
 function openSheet(catId){
-  curCatId=catId; activeBrand='All';
+  curCatId=catId;activeBrand='All';
   const cat=CATS.find(c=>c.id===catId);
   document.getElementById('sheet-title').textContent=cat.em+' '+cat.nm;
   document.getElementById('sheet-search').value='';
   document.getElementById('custom-input').value='';
-  buildBrands();
-  renderProds();
+  buildBrands();renderProds();
   document.getElementById('backdrop').classList.add('show');
   document.getElementById('sheet').classList.add('open');
-  document.getElementById('sheet').scrollTop=0;
 }
-function closeSheet(){
-  document.getElementById('backdrop').classList.remove('show');
-  document.getElementById('sheet').classList.remove('open');
-}
+function closeSheet(){document.getElementById('backdrop').classList.remove('show');document.getElementById('sheet').classList.remove('open');}
 function buildBrands(){
   const prods=PRODUCTS[curCatId]||[];
-  const brands=['All',...new Set(prods.map(p=>p.b))];
+  const brands=['All',...new Set(prods.map(p=>p.b).filter(Boolean))];
   document.getElementById('brand-scroll').innerHTML=brands.map(b=>
-    `<div class="bpill${b===activeBrand?' on':''}" onclick="setBrand('${e(b)}')">${b}</div>`
+    `<div class="bpill${b===activeBrand?' on':''}" onclick="setBrand(this.textContent)">${b}</div>`
   ).join('');
 }
-function setBrand(b){
-  activeBrand=b;
-  document.querySelectorAll('.bpill').forEach(el=>el.classList.toggle('on',el.textContent===b));
-  renderProds();
-}
+function setBrand(b){activeBrand=b;document.querySelectorAll('.bpill').forEach(el=>el.classList.toggle('on',el.textContent===b));renderProds();}
 function filterProds(){renderProds();}
 function renderProds(){
   const q=(document.getElementById('sheet-search').value||'').toLowerCase();
   const all=PRODUCTS[curCatId]||[];
   const addedNames=(picks[who?.id]||[]).map(p=>p.n);
   let list=activeBrand==='All'?all:all.filter(p=>p.b===activeBrand);
-  if(q) list=list.filter(p=>p.n.toLowerCase().includes(q)||p.b.toLowerCase().includes(q));
+  if(q)list=list.filter(p=>(p.n+' '+p.b).toLowerCase().includes(q));
   document.getElementById('prod-count').textContent=list.length+' products';
-  if(!list.length){document.getElementById('prod-list').innerHTML='<div class="no-results">No products found — use the custom field above to add it</div>';return;}
+  if(!list.length){document.getElementById('prod-list').innerHTML='<div class="no-results">No products found — use the field above to add manually</div>';return;}
   document.getElementById('prod-list').innerHTML=list.map(p=>{
     const added=addedNames.includes(p.n);
+    const imgEl=p.img?`<img class="prod-img" src="${p.img}" loading="lazy" onerror="this.style.display='none'">`:`<div class="prod-ph">🛒</div>`;
     return `<div class="prod${added?' added':''}">
-      <div class="prod-em">${p.e}</div>
+      ${imgEl}
       <div class="prod-info">
+        ${p.b?`<div class="prod-brand">${p.b}</div>`:''}
         <div class="prod-name">${p.n}</div>
-        <div class="prod-detail">${p.sz}</div>
-        <div class="prod-price">${p.p}</div>
+        <div class="prod-price">${p.p}${p.uom?' / '+p.uom:''}</div>
       </div>
-      <button class="add-btn" onclick="addProd('${e(p.n)}','${p.e}','${e(p.p)}','${e(p.b)}')">${added?'✓ Added':'+ Add'}</button>
+      <button class="add-btn" onclick="addProd(this)"
+        data-n="${p.n.replace(/"/g,'&quot;')}"
+        data-b="${(p.b||'').replace(/"/g,'&quot;')}"
+        data-p="${p.p}"
+        data-url="${p.url}"
+      >${added?'✓ Added':'+ Add'}</button>
     </div>`;
   }).join('');
 }
-function e(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
-
-function addProd(name,emoji,price,brand){
+function addProd(btn){
   if(!who){alert('Go back and tap your name first!');return;}
+  const name=btn.dataset.n,brand=btn.dataset.b,price=btn.dataset.p,url=btn.dataset.url;
   if(!picks[who.id])picks[who.id]=[];
   if(!picks[who.id].find(p=>p.n===name)){
-    picks[who.id].push({n:name,e:emoji,p:price,b:brand,q:name});
-    save();refreshBadge();renderProds();
-    showToast(emoji+' Added to list!');
+    picks[who.id].push({n:name,b:brand,p:price,url:url});
+    save();refreshBadge();renderProds();showToast('✓ Added to list!');
   }
 }
 function addCustom(){
   if(!who){alert('Go back and tap your name first!');return;}
   const val=document.getElementById('custom-input').value.trim();
   if(!val)return;
-  addProd(val,'🛒','',curCatId);
+  if(!picks[who.id])picks[who.id]=[];
+  if(!picks[who.id].find(p=>p.n===val)){
+    picks[who.id].push({n:val,b:'',p:'',url:`https://www.heb.com/search?q=${encodeURIComponent(val)}&store=${STORE}`});
+    save();refreshBadge();showToast('✓ '+val+' added!');
+  }
   document.getElementById('custom-input').value='';
 }
-
-// ── LIST ──────────────────────────────────────────────────────────
 function refreshBadge(){
   const t=Object.values(picks).reduce((s,a)=>s+(a||[]).length,0);
-  const b=document.getElementById('bdg');
-  b.textContent=t;b.classList.toggle('show',t>0);
+  const b=document.getElementById('bdg');b.textContent=t;b.classList.toggle('show',t>0);
 }
 function renderList(){
   const body=document.getElementById('list-body');
-  const all=[];
-  Object.entries(picks).forEach(([mid,items])=>(items||[]).forEach(i=>all.push({...i,mid})));
+  const all=[];Object.entries(picks).forEach(([mid,items])=>(items||[]).forEach(i=>all.push({...i,mid})));
   const ppl=Object.keys(picks).filter(k=>(picks[k]||[]).length>0).length;
   const dn=Object.values(checked).filter(Boolean).length;
   document.getElementById('st-tot').textContent=all.length;
   document.getElementById('st-ppl').textContent=ppl;
   document.getElementById('st-dn').textContent=dn;
   if(!all.length){body.innerHTML='<div class="empty-list"><div class="big">🛒</div><p>Nothing yet!<br>Have the family tap <strong>Add Items</strong> to get started.</p></div>';return;}
-  const mmap={mom:{n:'Mom',e:'👩'},dad:{n:'Dad',e:'👨'},rory:{n:'Rory',e:'🧒'},rowan:{n:'Rowan',e:'👦'}};
   let html='';
   Object.entries(picks).forEach(([mid,items])=>{
     if(!items||!items.length)return;
-    const m=mmap[mid];
+    const m=MEMBERS[mid];
     html+=`<div class="person-blk"><div class="person-hd"><span>${m.e}</span><span>${m.n}'s picks</span></div>`;
     items.forEach(item=>{
-      const key=item.n+'|'+mid;
-      const done=checked[key];
-      html+=`<div class="list-row${done?' done':''}" onclick="toggleDone('${e(key)}')">
-        <span style="font-size:18px">${item.e}</span>
+      const key=item.n+'|'+mid;const done=checked[key];
+      html+=`<div class="list-row${done?' done':''}" onclick="toggleDone('${key.replace(/'/g,"\'")}')">
+        <span style="font-size:18px">🛒</span>
         <span class="lname">${item.n}</span>
         ${item.p?`<span class="lprice">${item.p}</span>`:''}
-        <a class="heb-pill" href="https://www.heb.com/search?q=${encodeURIComponent(item.n)}&store=623" target="_blank" rel="noopener" onclick="event.stopPropagation()">HEB →</a>
-        <button class="rm-btn" onclick="event.stopPropagation();removeItem('${e(mid)}','${e(item.n)}')">✕</button>
+        <a class="heb-pill" href="${item.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">HEB →</a>
+        <button class="rm-btn" onclick="event.stopPropagation();removeItem('${mid}','${item.n.replace(/'/g,"\'")}')">✕</button>
       </div>`;
     });
     html+='</div>';
@@ -1128,38 +575,26 @@ function renderList(){
   body.innerHTML=html;
 }
 function toggleDone(key){checked[key]=!checked[key];save();renderList();}
-function removeItem(mid,name){
-  if(!picks[mid])return;
-  picks[mid]=picks[mid].filter(p=>p.n!==name);
-  save();refreshBadge();renderList();
-}
+function removeItem(mid,name){if(!picks[mid])return;picks[mid]=picks[mid].filter(p=>p.n!==name);save();refreshBadge();renderList();}
 function openAll(){
   const all=[];Object.values(picks).forEach(items=>(items||[]).forEach(i=>all.push(i)));
   if(!all.length){alert('No items yet!');return;}
-  all.slice(0,5).forEach(i=>window.open(`https://www.heb.com/search?q=${encodeURIComponent(i.n)}&store=623`,'_blank'));
-  if(all.length>5)alert('Opened first 5 on HEB.\nTap "HEB →" next to each item for the rest.');
+  all.slice(0,5).forEach(i=>window.open(i.url,'_blank'));
+  if(all.length>5)alert('Opened first 5 on HEB.\nTap HEB → next to each item for the rest.');
 }
 function copyList(){
   const mmap={mom:'Mom',dad:'Dad',rory:'Rory',rowan:'Rowan'};
   let txt='Family Grocery List — H-E-B (Bandera & 1604)\n\n';
   Object.entries(picks).forEach(([mid,items])=>{
     if(!items||!items.length)return;
-    txt+=mmap[mid]+':\n';
-    items.forEach(i=>txt+='  '+i.e+' '+i.n+(i.p?' — '+i.p:'')+'\n');
-    txt+='\n';
+    txt+=mmap[mid]+':\n';items.forEach(i=>txt+='  '+i.n+(i.p?' — '+i.p:'')+'\n');txt+='\n';
   });
   navigator.clipboard.writeText(txt).then(()=>{
-    const el=document.getElementById('copy-ok');el.style.display='block';
-    setTimeout(()=>el.style.display='none',2500);
+    const el=document.getElementById('copy-ok');el.style.display='block';setTimeout(()=>el.style.display='none',2500);
   });
 }
-function resetList(){
-  if(confirm('Clear everyone\'s picks and start fresh?')){picks={};checked={};save();refreshBadge();renderList();}
-}
-function showToast(msg){
-  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2000);
-}
+function resetList(){if(confirm("Clear everyone's picks?")){picks={};checked={};save();refreshBadge();renderList();}}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
 </script>
 </body>
 </html>
