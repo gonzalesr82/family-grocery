@@ -5,6 +5,9 @@ on:
     - cron: '0 6 * * 0'   # Every Sunday at 6am UTC (1am San Antonio time)
   workflow_dispatch:        # Also lets you run it manually any time
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
